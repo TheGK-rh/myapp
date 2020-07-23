@@ -1,0 +1,52 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.6-node-browsers
+        environment:
+          RAILS_ENV: test
+      - image: circleci/mysql:5.7-ram
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+          MYSQL_ROOT_HOST: '%'
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          name: bundler install
+          command: gem install bundler -v 2.1.4
+
+      - run:
+          name: default mysql client install
+          command:
+            sudo apt-get install -y default-mysql-client
+
+      - restore_cache:
+          keys:
+            - cache-bundle-v1-{{ checksum "Gemfile.lock" }}
+            - cache-bundle-v1-
+
+      - run:
+          name: bundle install
+          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: cache-bundle-v1-{{ checksum "Gemfile.lock" }}
+
+      - run: mv config/database.yml.ci config/database.yml
+
+      - run:
+          name: Wait for DB and db:create
+          command: |
+            dockerize -wait tcp://127.0.0.1:3306 -timeout 180s
+            bundle exec rake db:create db:schema:load --trace
+
+      #- run:
+          #name: run RSpec
+          #command: bundle exec rspec
