@@ -1,0 +1,31 @@
+<% if user_signed_in? %>
+  <% @task.user_id == current_user.id %>
+    <div class="container mt-3">
+      <h2><%= @task.title %></h2>
+      <p>ステータス：</p>
+      <br>
+
+      <h5>タスク詳細</h5>
+      <br>
+
+      <h5>サブタスク</h5>
+      <br>
+
+      <h5>タグ</h5>
+      <br>
+      <br>
+
+      <h5>期日</h5>
+      <br>
+
+      <h5>ファイル</h5>
+      <br>
+
+      <h5>コメント</h5>
+      <br>
+
+    </div>
+  <% else %>
+    <h4>表示できません。</h4>
+  <% end %>
+<% end %>

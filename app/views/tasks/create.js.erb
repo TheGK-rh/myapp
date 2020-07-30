@@ -1,0 +1,5 @@
+$("textarea").val("");
+$("input").val("");
+$('.todolist').html("<%= escape_javascript(render 'tasks', tasks: @tasks) %>");
+$('.onworking').html("<%= escape_javascript(render 'onworking', tasks: @tasks) %>");
+$('.completed').html("<%= escape_javascript(render 'completed', tasks: @tasks) %>");

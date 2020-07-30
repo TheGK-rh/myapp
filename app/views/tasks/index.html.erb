@@ -1,2 +1,15 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<div class="container">
+  <h4><%= currnent_user.name %></h4>
+  <%= render 'form' %>
+  <div class="row mt-5">
+    <div class="col-4 todolist">
+      <%= render 'todolist', tasks: @tasks %>
+    </div>
+    <div class="col-4 onworking">
+      <%= render 'onworking', tasks: @tasks %>
+    </div>
+    <div class="col-4 completed">
+      <%= render 'completed', tasks: @tasks %>
+    </div>
+  </div>
+</div>
