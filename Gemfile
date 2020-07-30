@@ -20,6 +20,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #Added
 gem 'devise', '~> 4.7', '>= 4.7.2'
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.13'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
