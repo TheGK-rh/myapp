@@ -1,27 +1,27 @@
 <% if user_signed_in? %>
-  <% @task.user_id == current_user.id %>
+  <% if @task.user_id == current_user.id %>
     <div class="container mt-3">
       <h2><%= @task.title %></h2>
       <p>ステータス：</p>
       <br>
 
-      <h5>タスク詳細</h5>
+      <h6>タスク詳細</h6>
       <br>
 
-      <h5>サブタスク</h5>
+      <h6>サブタスク</h6>
       <br>
 
-      <h5>タグ</h5>
+      <h6>タグ</h6>
       <br>
       <br>
 
-      <h5>期日</h5>
+      <h6>期日</h6>
       <br>
 
-      <h5>ファイル</h5>
+      <h6>ファイル</h6>
       <br>
 
-      <h5>コメント</h5>
+      <h6>コメント</h6>
       <br>
 
     </div>

@@ -1,13 +1,10 @@
-<h5>To Do List</h5>
+<h6 style="color: dodgerblue;"><u>To Do List</u></h6>
 <% tasks.each do |task| %>
   <% if task.category_id == 1 %>
     <div class="card md-1" id="task-<%= task.id %>">
       <div class="card-body">
-        <h5 class="card-text">
+        <h6 class="card-text">
           <%= link_to task.title, task_path(task) %>
-        </h5>
-        <h6>
-          Task.Term
         </h6>
         <p>
           Task.Tags
@@ -19,6 +16,7 @@
           <%= link_to task_path(task), method: :delete, remote: true, date: { confirm: "削除します。よろしいですか。" } do %>
             <%= icon('fas', 'trash-alt') %>
           <% end %>
+          <%= icon('fas', 'arrow-alt-circle-right') %>
         </p>
       </div>
     </div>

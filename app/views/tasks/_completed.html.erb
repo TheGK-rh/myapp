@@ -1,18 +1,16 @@
-<h5>完了済</h5>
+<h6 style="color: dodgerblue;"><u>完了済</u></h6>
 <% tasks.each do |task| %>
   <% if task.category_id == 3 %>
     <div class="card md-1" id="task-<%= task.id %>">
       <div class="card-body">
-        <h5 class="card-text">
+        <h6 class="card-text">
           <%= link_to task.title, task_path(task) %>
-        </h5>
-        <h6>
-          Task.Term
         </h6>
         <p>
           Task.Tags
         </p>
         <p class="text-right">
+          <%= icon('fas', 'arrow-alt-circle-left') %>
           <%= link_to edit_task_path(task) do %>
             <%= icon('fas', 'edit') %>
           <% end %>

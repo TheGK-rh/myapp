@@ -12,7 +12,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(task_params)
+    @task = Task.new(task_params)
+    @task.user_id = current_user.id
+    @task.save
     @tasks = Task.all
   end
 
@@ -34,7 +36,7 @@ class TasksController < ApplicationController
   private
 
     def task_params
-      params.require(:task).permit(:title, :user_id, :category_id)
+      params.require(:task).permit(:title, :category_id, :user_id)
     end
 
     def find_task
