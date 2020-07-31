@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :tasks do
     resources :descriptions, only: [:create, :edit, :update, :destroy]
+    resources :subtasks, only: [:create, :destroy] do
+      member do
+        patch :complete
+        patch :purge
+      end
+    end
   end
   root "tasks#index"
 

@@ -1,0 +1,4 @@
+$("textarea").val("");
+$("input").val("");
+$('.bd-example-modal-sm').modal('hide');
+$('#subtasks_area').html("<%= escape_javascript(render 'subtasks/index', subtasks: @subtasks) %>");

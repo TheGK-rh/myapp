@@ -15,7 +15,13 @@
       </div>
       <br>
 
-      <h6><%= icon('fas', 'tasks', style: "color: dodgerblue;") %>&emsp;サブタスク</h6>
+      <h6>
+        <%= render partial: 'subtasks/form', locals: { subtask: @subtask, task: @task } %>
+        サブタスク
+      </h6>
+      <div id="subtasks_area">
+        <%= render partial: 'subtasks/index', locals: { subtasks: @subtasks } %>
+      </div>
       <br>
 
       <h6><%= icon('fas', 'tags', style: "color: dodgerblue;") %>&emsp;タグ</h6>
