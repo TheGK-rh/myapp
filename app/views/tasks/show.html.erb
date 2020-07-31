@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <% if @task.user_id == current_user.id %>
-    <div class="container mt-3">
+    <div class="container task-cont mt-3">
       <h2><u><%= icon('fas', 'fish', style: "color: dodgerblue;") %>　<%= @task.title %></u></h2>
       <br>
       <h5><span class="badge badge-primary"><%= @task.category.name %></span></h5>
