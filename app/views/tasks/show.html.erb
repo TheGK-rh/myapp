@@ -1,27 +1,33 @@
 <% if user_signed_in? %>
   <% if @task.user_id == current_user.id %>
     <div class="container mt-3">
-      <h2><%= @task.title %></h2>
-      <p>ステータス：</p>
+      <h2><u><%= icon('fas', 'fish', style: "color: dodgerblue;") %>　<%= @task.title %></u></h2>
+      <br>
+      <h5><span class="badge badge-primary"><%= @task.category.name %></span></h5>
       <br>
 
-      <h6>タスク詳細</h6>
+      <h6>
+        <%= render partial: 'descriptions/form', locals: { description: @description, task: @task } %>
+        タスク詳細
+      </h6>
+      <div id="descriptions_area">
+        <%= render partial: 'descriptions/index', locals: { descriptions: @descriptions } %>
+      </div>
       <br>
 
-      <h6>サブタスク</h6>
+      <h6><%= icon('fas', 'tasks', style: "color: dodgerblue;") %>&emsp;サブタスク</h6>
       <br>
 
-      <h6>タグ</h6>
-      <br>
-      <br>
-
-      <h6>期日</h6>
+      <h6><%= icon('fas', 'tags', style: "color: dodgerblue;") %>&emsp;タグ</h6>
       <br>
 
-      <h6>ファイル</h6>
+      <h6><%= icon('fas', 'calendar-alt', style: "color: dodgerblue;") %>&emsp;期日</h6>
       <br>
 
-      <h6>コメント</h6>
+      <h6><%= icon('fas', 'file-alt', style: "color: dodgerblue;") %>&emsp;ファイル</h6>
+      <br>
+
+      <h6><%= icon('fas', 'comment', style: "color: dodgerblue;") %>&emsp;コメント</h6>
       <br>
 
     </div>

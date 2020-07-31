@@ -1,0 +1,15 @@
+<% descriptions.each do |description| %>
+  <div class="card md-1" id="description-<%= description.id %>">
+    <div class="card-body">
+      <p class="card-text">
+        <%= simple_format description.description %>
+      </p>
+        <%= link_to edit_task_description_path(description.task, description) do %>
+          <%= icon('fas', 'edit') %>
+        <% end %>/
+        <%= link_to task_description_path(description.task, description), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
+          <%= icon('fas', 'trash-alt') %>
+        <% end %>
+    </div>
+  </div>
+<% end %>

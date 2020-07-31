@@ -1,4 +1,4 @@
-<h6 style="color: dodgerblue;"><u>作業中</u></h6>
+<h6 style="color: dodgerblue;"><%= icon('fas', 'swimmer') %>　<u>作業中</u></h6>
 <% tasks.each do |task| %>
   <% if task.category_id == 2 %>
     <div class="card md-1" id="task-<%= task.id %>">

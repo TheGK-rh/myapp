@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     get 'profile/:id/followers', to: 'users/registrations#followers', as: 'followers'
   end
   resources :relationships, only: [:create, :destroy]
-  resources :tasks
+  resources :tasks do
+    resources :descriptions, only: [:create, :edit, :update, :destroy]
+  end
   root "tasks#index"
 
 end

@@ -9,6 +9,8 @@ class TasksController < ApplicationController
   end
 
   def show
+    @description = Description.new
+    @descriptions = @task.descriptions.order("created_at DESC")
   end
 
   def create

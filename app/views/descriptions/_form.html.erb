@@ -1,22 +1,21 @@
-<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
-  <%= icon('fas', 'fish') %>Create New Task
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+  <%= icon('fas', 'book') %>
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">タスク作成</h5>
+        <h5 class="modal-title" id="exampleModalLabel">タスクについて</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <%= form_for @task, remote: true do |f| %>
+      <%= form_with(model: [@task, @description] ) do |f| %>
         <div class="modal-body">
           <div class="form-group">
-            <%= f.label :title, "タイトル" %>
-            <%= f.text_field :title, class: "form-control" %>
-            <%= collection_select(:task, :category_id, Category.all, :id, :name, prompt: "カテゴリを選択してください", class: "form-control") %>
+            <%= f.label :description, "タスク詳細" %>
+            <%= f.text_area :description, class: "form-control" %>
           </div>
         </div>
         <div class="modal-footer">

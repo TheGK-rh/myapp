@@ -1,4 +1,4 @@
-<h6 style="color: dodgerblue;"><u>完了済</u></h6>
+<h6 style="color: dodgerblue;"><%= icon('fas', 'flag-checkered') %>　<u>完了</u></h6>
 <% tasks.each do |task| %>
   <% if task.category_id == 3 %>
     <div class="card md-1" id="task-<%= task.id %>">
