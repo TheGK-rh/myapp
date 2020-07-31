@@ -1,0 +1,4 @@
+<%= form_with(model: [@task, @comment] ) do |f| %>
+  <p><%= f.text_area :body, class: "form-control form-control-sm" %></p>
+  <p><%= f.submit "Comment", class: "btn btn-primary" %></p>
+<% end %>

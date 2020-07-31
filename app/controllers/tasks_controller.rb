@@ -9,6 +9,8 @@ class TasksController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @task.comments.order("created_at ASC")
     @description = Description.new
     @descriptions = @task.descriptions.order("created_at DESC")
     @subtask = Subtask.new

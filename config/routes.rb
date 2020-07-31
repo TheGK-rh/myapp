@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :tasks do
     resources :descriptions, only: [:create, :edit, :update, :destroy]
+    resources :comments, only: [:create, :destroy]
     resources :subtasks, only: [:create, :destroy] do
       member do
         patch :complete

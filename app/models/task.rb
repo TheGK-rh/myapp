@@ -5,6 +5,7 @@ class Task < ApplicationRecord
 
   has_many :descriptions
   has_many :subtasks
+  has_many :comments
 
   validates :title, presence: true
 

@@ -5,7 +5,7 @@
       <br>
       <h5><span class="badge badge-primary"><%= @task.category.name %></span></h5>
       <br>
-
+      
       <h6>
         <%= render partial: 'descriptions/form', locals: { description: @description, task: @task } %>
         タスク詳細
@@ -34,6 +34,12 @@
       <br>
 
       <h6><%= icon('fas', 'comment', style: "color: dodgerblue;") %>&emsp;コメント</h6>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      </div>
+      <div class="comment mt-3">
+        <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>
+      </div>
       <br>
 
     </div>
