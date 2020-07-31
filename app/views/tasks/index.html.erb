@@ -1,14 +1,16 @@
 <div class="container">
-  <h4><%= currnent_user.name %></h4>
-  <%= render 'form' %>
   <div class="row mt-5">
-    <div class="col-4 todolist">
+    <div class="col-3">
+      <h4>User Name</h4>
+      <%= render 'form' %>
+    </div>
+    <div class="col-3 todolist">
       <%= render 'todolist', tasks: @tasks %>
     </div>
-    <div class="col-4 onworking">
+    <div class="col-3 onworking">
       <%= render 'onworking', tasks: @tasks %>
     </div>
-    <div class="col-4 completed">
+    <div class="col-3 completed">
       <%= render 'completed', tasks: @tasks %>
     </div>
   </div>

@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :find_task, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -33,7 +34,7 @@ class TasksController < ApplicationController
   private
 
     def task_params
-      params.require(:task).permit(:title, :user_id)
+      params.require(:task).permit(:title, :user_id, :category_id)
     end
 
     def find_task
