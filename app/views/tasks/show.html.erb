@@ -5,7 +5,9 @@
       <br>
       <h5><span class="badge badge-primary"><%= @task.category.name %></span></h5>
       <br>
+      <br>
 
+      <%# ビュー：　タスク詳細 %>
       <h6>
         <%= render partial: 'descriptions/form', locals: { description: @description, task: @task } %>
         タスク詳細
@@ -15,6 +17,7 @@
       </div>
       <br>
 
+      <%# ビュー：　サブタスク%>
       <h6>
         <%= render partial: 'subtasks/form', locals: { subtask: @subtask, task: @task } %>
         サブタスク
@@ -24,6 +27,7 @@
       </div>
       <br>
 
+      <%# ビュー：　タグ %>
       <h6>
         <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
           <%= icon('fas', 'tags') %>
@@ -37,6 +41,7 @@
       </div>
       <br>
 
+      <%# ビュー：　期日 %>
       <h6>
         <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
           <%= icon('fas', 'calendar-alt') %>
@@ -48,13 +53,25 @@
       </div>
       <br>
 
-      <h6><%= icon('fas', 'file-alt', style: "color: dodgerblue;") %>&emsp;ファイル</h6>
+      <%# ビュー：　ファイル  %>
+      <h6>
+        <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
+          <%= icon('fas', 'file-alt') %>
+        <% end %>
+        ファイル
+      </h6>
       <br>
       <%= render partial: 'attachments/index', locals: { attachments: @attachments } %>
       <%= render partial: 'attachments/form', locals: { attachment: @attachment, task: @task } %>
       <br>
 
-      <h6><%= icon('fas', 'comment', style: "color: dodgerblue;") %>&emsp;コメント</h6>
+      <%# ビュー：　コメント %>
+      <h6>
+        <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
+          <%= icon('fas', 'comment') %>
+        <% end %>
+        コメント
+      </h6>
       <div id="comments_area">
         <%= render partial: 'comments/index', locals: { comments: @comments } %>
       </div>
