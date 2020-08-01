@@ -1,0 +1,28 @@
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+  <%= icon('fas', 'book') %>
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">タスクについて</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_with(model: [@task, @description] ) do |f| %>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :description, "タスク詳細" %>
+            <%= f.text_area :description, class: "form-control" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <%= f.submit "Create", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<% if user_signed_in? %>
+  <% if @task.user_id == current_user.id %>
+    <div class="container task-cont mt-3">
+      <h2><u><%= icon('fas', 'fish', style: "color: dodgerblue;") %>　<%= @task.title %></u></h2>
+      <br>
+      <h5><span class="badge badge-primary"><%= @task.category.name %></span></h5>
+      <br>
+      <br>
+
+      <%# ビュー：　タスク詳細 %>
+      <h6>
+        <%= render partial: 'descriptions/form', locals: { description: @description, task: @task } %>
+        タスク詳細
+      </h6>
+      <div id="descriptions_area">
+        <%= render partial: 'descriptions/index', locals: { descriptions: @descriptions } %>
+      </div>
+      <br>
+
+      <%# ビュー：　サブタスク%>
+      <h6>
+        <%= render partial: 'subtasks/form', locals: { subtask: @subtask, task: @task } %>
+        サブタスク
+      </h6>
+      <div id="subtasks_area">
+        <%= render partial: 'subtasks/index', locals: { subtasks: @subtasks } %>
+      </div>
+      <br>
+
+      <%# ビュー：　タグ %>
+      <h6>
+        <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
+          <%= icon('fas', 'tags') %>
+        <% end %>
+        タグ
+      </h6>
+      <div class="tag-show">
+        <% if @task.tags.any? %>
+          <%= render @task.tags %>
+        <% end %>
+      </div>
+      <br>
+
+      <%# ビュー：　期日 %>
+      <h6>
+        <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
+          <%= icon('fas', 'calendar-alt') %>
+        <% end %>
+        期日
+      </h6>
+      <div class="term-show">
+        <%= @task.term %>
+      </div>
+      <br>
+
+      <%# ビュー：　ファイル  %>
+      <h6>
+        <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
+          <%= icon('fas', 'file-alt') %>
+        <% end %>
+        ファイル
+      </h6>
+      <br>
+      <%= render partial: 'attachments/index', locals: { attachments: @attachments } %>
+      <%= render partial: 'attachments/form', locals: { attachment: @attachment, task: @task } %>
+      <br>
+
+      <%# ビュー：　コメント %>
+      <h6>
+        <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
+          <%= icon('fas', 'comment') %>
+        <% end %>
+        コメント
+      </h6>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      </div>
+      <div class="comment mt-3">
+        <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>
+      </div>
+      <br>
+
+    </div>
+  <% else %>
+    <h4>表示できません。</h4>
+  <% end %>
+<% end %>

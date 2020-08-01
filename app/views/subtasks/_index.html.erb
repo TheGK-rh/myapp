@@ -1,0 +1,29 @@
+<% subtasks.each do |subtask| %>
+  <div id="subtask-<%= subtask.id %>">
+    <% if subtask.completed == false %>
+      <ul>
+        <li>
+          <ins><%= subtask.name %></ins>
+          <%= link_to complete_task_subtask_path(subtask.task, subtask), method: :patch do %>
+            <%= icon('fas', 'flag-checkered') %>
+          <% end %>/
+          <%= link_to task_subtask_path(subtask.task, subtask), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
+            <%= icon('fas', 'trash-alt') %>
+          <% end %>
+        </li>
+      </ul>
+    <% else %>
+      <ul>
+        <li>
+          <del><%= subtask.name %></del>
+          <%= link_to purge_task_subtask_path(subtask.task, subtask), method: :patch do %>
+            <%= icon('fas', 'history') %>
+          <% end %>/
+          <%= link_to task_subtask_path(subtask.task, subtask), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
+            <%= icon('fas', 'trash-alt') %>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

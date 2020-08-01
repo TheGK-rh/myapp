@@ -1,0 +1,28 @@
+<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+  <%= icon('fas', 'fish') %>&nbsp;タスク作成
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_for @task, remote: true do |f| %>
+        <div class="modal-body">
+          <div class="form-group">
+            <h5><%= f.label :title, "タイトル" %></h5>
+            <%= f.text_area :title, class: "form-control" %>
+            <br>
+            <%= collection_select(:task, :category_id, Category.all, :id, :name, {prompt: "カテゴリを選択してください"}, {class: "form-control"} )%>
+            <br>
+            <%= collection_select(:task, :tag_ids, Tag.all, :id, :name, {prompt: "タグを選択してください(複数選択可)"}, { multiple: true, size: 2, class: "form-control" }) %>
+            <br>
+            <%= f.date_field :term, class: "form-control" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <%= f.submit "作成する", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
