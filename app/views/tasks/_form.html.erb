@@ -5,28 +5,22 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">タスク作成</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <%= form_for @task, remote: true do |f| %>
         <div class="modal-body">
           <div class="form-group">
-            <%= f.label :title, "タイトル" %>
-            <%= f.text_field :title, class: "form-control" %>
+            <h5><%= f.label :title, "タイトル" %></h5>
+            <%= f.text_area :title, class: "form-control" %>
             <br>
-            <%= collection_select(:task, :category_id, Category.all, :id, :name, prompt: "カテゴリを選択してください", class: "form-control") %>
+            <%= collection_select(:task, :category_id, Category.all, :id, :name, {prompt: "カテゴリを選択してください"}, {class: "form-control"} )%>
             <br>
-            <%= collection_select(:task, :tag_ids, Tag.all, :id, :name, {prompt: "タグを選択してください"}, {multiple: true}) %>
+            <%= collection_select(:task, :tag_ids, Tag.all, :id, :name, {prompt: "タグを選択してください(複数選択可)"}, { multiple: true, size: 2, class: "form-control" }) %>
             <br>
-            <%= f.date_field :term %>
+            <%= f.date_field :term, class: "form-control" %>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-          <%= f.submit "Create", class: "btn btn-primary" %>
+          <%= f.submit "作成する", class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
