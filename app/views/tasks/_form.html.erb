@@ -18,6 +18,8 @@
             <%= f.text_field :title, class: "form-control" %>
             <br>
             <%= collection_select(:task, :category_id, Category.all, :id, :name, prompt: "カテゴリを選択してください", class: "form-control") %>
+            <br>
+            <%= collection_select(:task, :tag_ids, Tag.all, :id, :name, {prompt: "タグを選択してください"}, {multiple: true}) %>
           </div>
         </div>
         <div class="modal-footer">

@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :tasks do
+    member do
+      patch :gotowork
+      patch :gotocomplete
+      patch :backtodolist
+    end
     resources :descriptions, only: [:create, :edit, :update, :destroy]
     resources :comments, only: [:create, :destroy]
     resources :subtasks, only: [:create, :destroy] do

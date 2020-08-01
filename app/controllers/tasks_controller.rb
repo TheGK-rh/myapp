@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :find_task, only: [:show, :edit, :update, :destroy, :gotowork, :gotocomplete, :backtodolist]
 
   def index
     @tasks = Task.all
@@ -39,10 +39,25 @@ class TasksController < ApplicationController
     @task.destroy
   end
 
+  def gotowork
+    @task.update_attribute(:category_id, 2)
+    redirect_to root_path
+  end
+
+  def gotocomplete
+    @task.update_attribute(:category_id, 3)
+    redirect_to root_path
+  end
+
+  def backtodolist
+    @task.update_attribute(:category_id, 1)
+    redirect_to root_path
+  end
+
   private
 
     def task_params
-      params.require(:task).permit(:title, :category_id, :user_id)
+      params.require(:task).permit(:title, :category_id, :user_id, tag_ids: [])
     end
 
     def find_task
