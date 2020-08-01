@@ -4,7 +4,7 @@
     <div class="card md-1" id="task-<%= task.id %>">
       <div class="card-body">
         <h6 class="card-text">
-          <%= link_to task.title, task_path(task) %>
+          <%= icon('fas', 'fish', style: "color: dodgerblue;") %><%= link_to task.title, task_path(task) %>
         </h6>
         <h6>
           <%= task.term %>

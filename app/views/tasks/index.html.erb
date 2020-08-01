@@ -1,7 +1,30 @@
 <div class="container">
   <div class="row mt-5">
-    <div class="col-3">
-      <%= render 'form' %>
+    <div class=" task-index-menu col-3">
+      <div class="mb-3 mt-3">
+        <h6><button type="button" class="btn btn-outline-primary"><%= icon('fas', 'user') %>&nbsp;<%= current_user.name %></button></h6>
+      </div>
+      <div>
+        <%= render 'form' %>
+      </div>
+      <div class="team mt-3">
+        <h6><button type="button" class="btn btn-outline-primary"><%= icon('fas', 'users') %>&nbsp;チーム作成</button></h6>
+      </div>
+      <div class="help" style="color: dodgerblue;">
+        <p>
+          <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <%= icon('fas', 'question-circle') %>&nbsp;Help
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <h6><li><%= icon('fas', 'edit') %>：編集</li></h6>
+            <h6><li><%= icon('fas', 'trash-alt') %>：削除</li></h6>
+            <h6><li><%= icon('fas', 'arrow-alt-circle-right') %>：ステータス変更</li></h6>
+            <h6><li><%= icon('fas', 'arrow-alt-circle-left') %>：ステータス変更</li></h6>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-3 todolist">
       <%= render 'todolist', tasks: @tasks %>

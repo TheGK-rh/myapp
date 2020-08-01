@@ -34,13 +34,19 @@ body{
   margin: 0 auto;
 }
 
-.task-cont{
-  background: #f0f7ff;
-  padding-top: 20px;
-  border-radius: 15px;
+.help{
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
 //タスクShowのCSS//
+.task-cont{
+  background: #f0f7ff;
+  padding-top: 20px;
+  border: solid 1px dodgerblue;
+  border-radius: 15px;
+}
+
 .tag-show{
   margin-left: 20px
 }
