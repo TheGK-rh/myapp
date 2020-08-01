@@ -6,6 +6,9 @@
         <h6 class="card-text">
           <%= link_to task.title, task_path(task) %>
         </h6>
+        <h6>
+          <%= task.term %>
+        </h6>
         <p>
           <% if task.tags.any? %>
             <%= render task.tags %>
