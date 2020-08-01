@@ -43,9 +43,15 @@
         <% end %>
         期日
       </h6>
+      <div class="term-show">
+        <%= @task.term %>
+      </div>
       <br>
 
       <h6><%= icon('fas', 'file-alt', style: "color: dodgerblue;") %>&emsp;ファイル</h6>
+      <br>
+      <%= render partial: 'attachments/index', locals: { attachments: @attachments } %>
+      <%= render partial: 'attachments/form', locals: { attachment: @attachment, task: @task } %>
       <br>
 
       <h6><%= icon('fas', 'comment', style: "color: dodgerblue;") %>&emsp;コメント</h6>

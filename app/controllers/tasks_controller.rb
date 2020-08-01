@@ -9,6 +9,8 @@ class TasksController < ApplicationController
   end
 
   def show
+    @attachment = Attachment.new
+    @attachments = @task.attachments.order("created_at ASC")
     @comment = Comment.new
     @comments = @task.comments.order("created_at ASC")
     @description = Description.new

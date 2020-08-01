@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
     resources :descriptions, only: [:create, :edit, :update, :destroy]
     resources :comments, only: [:create, :destroy]
+    resources :attachments, only: [:create, :destroy]
     resources :subtasks, only: [:create, :destroy] do
       member do
         patch :complete

@@ -7,5 +7,6 @@ class User < ApplicationRecord
 
   has_many :descriptions
   has_many :comments
+  has_many :attachments
 
 end

@@ -8,6 +8,7 @@ class Task < ApplicationRecord
   has_many :comments
   has_many :task_tags, dependent: :destroy
   has_many :tags, through: :task_tags
+  has_many :attachments
 
   validates :title, presence: true
 
