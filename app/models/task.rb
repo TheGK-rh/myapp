@@ -12,4 +12,9 @@ class Task < ApplicationRecord
 
   validates :title, presence: true
 
+  def self.search(search)
+    return Task.all unless search
+    Task.where(['name LIKE ?', "%#{search}%"])
+  end
+
 end

@@ -21,6 +21,15 @@ body{
   background-color: yellow;
 }
 
+//indexのCSS//
+.link-mypage a{
+  text-decoration: none;
+}
+
+.link-mypage:hover a{
+  color: white;
+}
+
 //タスクCardのCSS//
 .card{
   border-top: solid 3px dodgerblue;

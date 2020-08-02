@@ -2,7 +2,7 @@
   <div class="row mt-5">
     <div class=" task-index-menu col-3">
       <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary"><%= icon('fas', 'user') %>&nbsp;<%= current_user.name %></button></h6>
+        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'user') %>&nbsp;<%= link_to current_user.name, profile_path(current_user.id) %></button></h6>
       </div>
       <div>
         <%= render 'form' %>
