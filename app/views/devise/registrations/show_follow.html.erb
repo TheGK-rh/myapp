@@ -1,0 +1,16 @@
+<div>
+  <h1><%= @user.id %></h1>
+  <section class="stats">
+      <%= render 'devise/shared/stats' %>
+  </section>
+  <div>
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <% @users.each do |user| %>
+          <li><%= link_to user.id, "#" %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
