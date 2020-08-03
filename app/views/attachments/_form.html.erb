@@ -1,6 +1,8 @@
-<div class="file-form">
+<div class="form-group">
   <%= form_with(model: [@task, @attachment] ) do |f| %>
-    <p><%= f.file_field :image %></p>
-    <p><%= f.submit "Add", class: "btn btn-primary btn-sm" %></p>
+      <%= f.file_field :image, class: "form-control-file" %><br>
+      <%= button_tag type: "submit", class: "btn btn-secondary btn-sm" do %>
+        追加　<%= icon('fas', 'folder-plus') %>
+      <% end %>
   <% end %>
 </div>

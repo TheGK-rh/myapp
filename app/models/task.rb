@@ -14,7 +14,7 @@ class Task < ApplicationRecord
 
   def self.search(search)
     return Task.all unless search
-    Task.where(['name LIKE ?', "%#{search}%"])
+    Task.where(['title LIKE ?', "%#{search}%"])
   end
 
 end

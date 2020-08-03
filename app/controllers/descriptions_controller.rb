@@ -14,6 +14,9 @@ class DescriptionsController < ApplicationController
   end
 
   def update
+    if @description.update(description_params)
+      redirect_to @task
+    end
   end
 
   def destroy
