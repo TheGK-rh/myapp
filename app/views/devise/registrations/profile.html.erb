@@ -26,4 +26,8 @@
     <%= render 'devise/shared/follow_form' if user_signed_in? %>
   </section>
 
+  <% @users.each do |user| %>
+    <%= link_to user.name, profile_path(user) %>
+  <% end %>  
+
 </div>

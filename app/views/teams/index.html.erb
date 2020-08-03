@@ -1,0 +1,9 @@
+<%= link_to "チーム作成", new_team_path %>
+
+<div class="container">
+  <% @teams.each do |team| %>
+    <% if user_signed_in? %>
+      <%= link_to team.team_name, team_path(team) %>
+    <% end %>
+  <% end %>
+</div>

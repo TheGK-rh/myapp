@@ -30,6 +30,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :teams
+
   root "tasks#index"
 
 end

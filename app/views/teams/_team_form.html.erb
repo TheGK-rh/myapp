@@ -1,0 +1,6 @@
+<%= form_for @team do |f| %>
+  <%= f.label :team_name, "チーム名" %>
+  <%= f.text_field :team_name %>
+  <%= collection_select(:team, :team_member_ids, @user, :id, :name, { prompt: "Select" }, { multiple: true }) %>
+  <%= f.submit %>
+<% end %>

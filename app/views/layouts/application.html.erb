@@ -26,14 +26,11 @@
             メニュー
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">ToDoList</a>
-            <a class="dropdown-item" href="#">作業中</a>
-            <a class="dropdown-item" href="#">完了</a>
-            <a class="dropdown-item" href="#">チーム一覧</a>
+            <a class="dropdown-item" href="/teams">チーム一覧</a>
             <a class="dropdown-item" href="#">タグ一覧/作成</a>
             <% if user_signed_in? %>
               <%= link_to "マイページ", profile_path(current_user.id), class: "dropdown-item" %>
-              <%= link_to "ログアウト", destroy_user_session_path, class: "dropdown-item" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <% end %>
           </div>
         </li>
@@ -49,5 +46,5 @@
     <div class="container">
       <%= yield %>
     </div>
-  </body>å
+  </body>
 </html>

@@ -9,6 +9,11 @@ class User < ApplicationRecord
   has_many :comments
   has_many :attachments
 
+  #Teamの設定
+  has_many :teams, dependent: :destroy
+  has_many :members
+  has_many :memberships, through: :members, source: :team
+
   #フォロー機能の設定
   has_many :active_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
 
