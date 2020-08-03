@@ -3,7 +3,7 @@
     <% if subtask.completed == false %>
       <ul>
         <li>
-          <ins><%= subtask.name %></ins>
+          <ins><%= subtask.name %></ins>&nbsp;&nbsp;
           <%= link_to complete_task_subtask_path(subtask.task, subtask), method: :patch do %>
             <%= icon('fas', 'flag-checkered') %>
           <% end %>/
@@ -15,7 +15,7 @@
     <% else %>
       <ul>
         <li>
-          <del><%= subtask.name %></del>
+          <del><%= subtask.name %></del>&nbsp;&nbsp;
           <%= link_to purge_task_subtask_path(subtask.task, subtask), method: :patch do %>
             <%= icon('fas', 'history') %>
           <% end %>/
