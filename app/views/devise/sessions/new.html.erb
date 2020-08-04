@@ -1,36 +1,44 @@
-<h2><%= icon('fas', 'fish', style: "color: dodgerblue;") %><br>LemonFishへログイン</h2>
-<br>
+<div class="container">
+  <div class="row">
+    <div class="col-6 user-box">
+      <div class="user-title">
+        <h2>
+          <%= icon('fas', 'lemon', style: "color: yellow;") %>
+          LemonFishへログイン
+        </h2>
+      </div>
+      <br>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :名前： %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
-  <br>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <div class="field">
+            <h6><%= f.label :name, "名前：" %></h6>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "名前を入力してください" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="field">
+            <h6><%= f.label :email, "メールアドレス：" %></h6>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレスを入力してください" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="field">
+            <h6><%= f.label :password, "パスワード：" %></h6>
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワードを入力してください" %>
+          </div>
+        </div>
+        <div class="actions">
+          <%= f.submit "ログイン", class: "btn btn-outline-primary btn-sm" %>
+        </div>
+      <% end %>
+      <br>
+      <div class="actions">
+        <a class="btn btn-primary btn-sm" href="#" role="button">簡単ログイン</a>
+      </div>
+      <br>
 
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <br>
-
-  <div class="field">
-    <%= f.label :パスワード %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  <br>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= render "devise/shared/links" %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "ログイン", class: "btn btn-outline-primary btn-sm" %>
   </div>
-<% end %>
-<br>
-
-<%= render "devise/shared/links" %>
+</div>

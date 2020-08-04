@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'carrierwave', '~> 2.1'
 gem 'fog-aws', '~> 3.6', '>= 3.6.6'
+gem 'i18n'
 
 
 group :development, :test do

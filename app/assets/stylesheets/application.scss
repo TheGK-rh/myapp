@@ -63,3 +63,40 @@ body{
 .term-show{
   margin-left: 20px
 }
+
+//Devise View PageのCSS//
+.user-title{
+  font-family: "Osaka-Mono";
+  font-weight: bold;
+}
+
+.user-box{
+  background: #f0f7ff;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  border: solid 1px dodgerblue;
+  border-radius: 15px;
+}
+
+//User Profile View PageのCSS//
+
+.user-prof{
+  border: solid 1px dodgerblue;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  background: #f0f7ff;
+  margin-bottom: 3px;
+}
+
+.user-name{
+  font-family: "Osaka-Mono";
+}
+
+.follow-show{
+  border: solid 1px dodgerblue;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  background: #f0f7ff;
+  padding-top: 20px;
+  margin-bottom: 3px;
+}

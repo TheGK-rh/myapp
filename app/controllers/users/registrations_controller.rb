@@ -6,18 +6,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def profile
     @user  = User.find(params[:id])
-    @users = User.all
+    @users = User.search(params[:search])
   end
 
   def following
-    @title = "フォロー"
+    @title = "フォローユーザー"
     @user  = User.find(params[:id])
     @users = @user.followings
     render 'show_follow'
   end
 
   def followers
-    @title = "フォロワー"
+    @title = "フォロワーユーザー"
     @user  = User.find(params[:id])
     @users = @user.followers
     render 'show_follow'
