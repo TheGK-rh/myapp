@@ -1,5 +1,23 @@
-<%= @team.team_name %>
-<%= @owner.name %>
-<% @team_members.each do |member| %>
-  <%= member.name %>
-<% end %>
+<div class="container">
+  <div class="row mt-5">
+    <div class="team-show-menu col-3">
+      <h6><%= @team.team_name %></h6>
+      <h6>オーナー：<br><%= @owner.name %></h6>
+      <h6>メンバー：<br>
+        <% @team_members.each do |member| %>
+          <%= member.name %>
+        <% end %>
+      </h6>
+      <h6>チームタスク作成</h6>
+    </div>
+    <div class="col-3">
+
+    </div>
+    <div class="col-3">
+
+    </div>
+    <div class="col-3">
+
+    </div>
+  </div>
+</div>
