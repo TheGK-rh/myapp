@@ -8,7 +8,7 @@ namespace :unicorn do
   #unicornをスタートさせるメソッド
   def start_unicorn
     within current_path do
-      execute :bundle. :exec, :unicorn, "-c #{fetch(:unicorn_config)} -E #{fetch(:rails_env)} -D"
+      execute :bundle, :exec, :unicorn, "-c #{fetch(:unicorn_config)} -E #{fetch(:rails_env)} -D"
     end
   end
 
@@ -38,7 +38,7 @@ namespace :unicorn do
     else
       start_unicorn
   end
-  
+
   #unicornを強制終了させるtask
   desc "Stop unicorn server immediately"
   task force_stop: :environment do
