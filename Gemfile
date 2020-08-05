@@ -30,6 +30,10 @@ gem 'fog-aws', '~> 3.6', '>= 3.6.6'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.1'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -47,6 +51,10 @@ group :test do
   gem 'chromedriver-helper'
   gem 'rails-controller-testing', '1.0.2'
   gem 'factory_bot_rails'
+end
+
+group :production, :staging do
+  gem 'unicorn'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
