@@ -8,8 +8,10 @@ set :repo_url, "git@github.com:TheGK-rh/myapp.git"
 set :deploy_to, 'var/www/rails/myapp'
 #シンボリックリンクを貼るファイル
 set :linked_files, fetch(:linked_files, []).push('config/setting.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 #シンボリックリンクを貼るディレクトリ
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+set :linked_files, fetch(:linked_files, []).push('config/master.key')
 #保持するバージョンの個数
 set :keep_releases, 5
 #rubyのバージョン
