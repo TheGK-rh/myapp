@@ -1,5 +1,6 @@
 #unicornのpidファイル、設定ファイルのディレクトリを設定
 namespace :unicorn do
+
   task :environment do
     set :unicorn_pid, "#{current_path}/tmp/pids/unicorn_pid"
     set :unicorn_config, "#{current_path}/config/unicorn/production.rb"
@@ -37,6 +38,7 @@ namespace :unicorn do
       reload_unicorn
     else
       start_unicorn
+    end
   end
 
   #unicornを強制終了させるtask
