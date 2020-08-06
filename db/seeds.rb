@@ -8,18 +8,8 @@
 
 User.create!(
   [
-    {
-      name: "Testユーザー",
-      email: "testuser@sample.jp",
-      password: "password",
-      confirmation_password: "password"
-    },
-    {
-      name: "Userテスト",
-      email: "usertest@sample.jp",
-      password: "password",
-      confirmation_password: "password"
-    }
+    {name: "Testユーザー", email: "testuser@sample.jp", password: "password", password_confirmation: "password"},
+    {name: "Userテスト", email: "usertest@sample.jp", password: "password", password_confirmation: "password"}
   ]
 )
 
