@@ -18,6 +18,8 @@ set :keep_releases, 5
 set :rbenv_ruby, '2.6.6'
 #出力するログのレベル。
 set :log_level, :debug
+#コネクション機能
+set :ssh_options, keepalive: true
 
 namespace :deploy do
   desc 'Restart application'
