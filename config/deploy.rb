@@ -1,9 +1,11 @@
 #capistranoのバージョン固定
-lock "~> 3.14.1"
+lock "~> 3.4.0"
 #デプロイするアプリケーション名
 set :application, "myapp"
 #cloneするgitレポジトリ
 set :repo_url, "git@github.com:TheGK-rh/myapp.git"
+#deployするブランチ
+set :branch, 'master'
 #deploy先のディレクトリ
 set :deploy_to, 'var/www/rails/myapp'
 #シンボリックリンクを貼るファイル

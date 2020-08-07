@@ -49,6 +49,7 @@ test:
 #
 production:
   adapter: mysql2
+  charset: utf8
   encoding: utf8
   pool: 5
   database: myapp_production
