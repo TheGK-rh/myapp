@@ -7,7 +7,7 @@ set :repo_url, "git@github.com:TheGK-rh/myapp.git"
 #deployするブランチ
 set :branch, 'master'
 #deploy先のディレクトリ
-set :deploy_to, '/var/www/rails/myapp'
+set :deploy_to, 'var/www/rails/myapp'
 #シンボリックリンクを貼るファイル
 set :linked_files, fetch(:linked_files, []).push('config/setting.yml')
 #シンボリックリンクを貼るディレクトリ
