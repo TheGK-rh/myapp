@@ -52,14 +52,14 @@ jobs:
           #command: bundle exec rspec
 
       # 自動デプロイ
-      #- add_ssh_keys:
-          #fingerprints:
-            #- "4c:9d:af:79:7f:6a:41:83:52:49:c6:cf:71:31:02:de"
+      - add_ssh_keys:
+          fingerprints:
+            - "ce:09:c9:ed:7e:e6:c0:32:bb:91:88:3e:20:54:ed:5e"
 
-      #- deploy:
-          #name: Capistrano deploy
-          #command: |
-            #if [ "${CIRCLE_BRANCH}" != "master" ]; then
-              #exit 0
-            #fi
-            #bundle exec cap production deploy
+      - deploy:
+          name: Capistrano deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              exit 0
+            fi
+            bundle exec cap production deploy
