@@ -50,3 +50,16 @@ jobs:
       #- run:
           #name: run RSpec
           #command: bundle exec rspec
+
+      # 自動デプロイ
+      #- add_ssh_keys:
+          #fingerprints:
+            #- "4c:9d:af:79:7f:6a:41:83:52:49:c6:cf:71:31:02:de"
+
+      #- deploy:
+          #name: Capistrano deploy
+          #command: |
+            #if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              #exit 0
+            #fi
+            #bundle exec cap production deploy

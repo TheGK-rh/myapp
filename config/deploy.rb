@@ -9,7 +9,7 @@ set :branch, 'master'
 #deploy先のディレクトリ
 set :deploy_to, 'var/www/rails/myapp'
 #シンボリックリンクを貼るファイル
-set :linked_files, fetch(:linked_files, []).push('config/setting.yml')
+set :linked_files, fetch(:linked_files, []).push('config/secrets.yml')
 #シンボリックリンクを貼るディレクトリ
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 #保持するバージョンの個数
