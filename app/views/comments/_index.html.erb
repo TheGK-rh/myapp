@@ -4,7 +4,7 @@
       <p class="card-text">
         <%= comment.user.name %>：&emsp;
         <%= comment.body %>　　
-        <%= link_to task_comment_path(comment.task, comment), method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "destroy" do %>
+        <%= link_to task_comment_path(comment.task, comment), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
           <%= icon('fas', 'trash-alt') %>
         <% end %>
       </p>

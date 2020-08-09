@@ -3,11 +3,15 @@
   <div id="error_explanation">
     <%= render 'error' %>
   </div>
+
   <div class="row mt-5">
     <div class=" task-index-menu col-3">
+      <%# ボタン：　プロフィールへ %>
       <div class="mb-3 mt-3">
         <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'user') %>&nbsp;<%= link_to current_user.name, profile_path(current_user.id) %></button></h6>
       </div>
+
+      <%# 検索フォーム %>
       <form class="form-inline my-2 my-lg-0">
         <%= form_tag(tasks_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
           <%= text_field_tag :search, "", class: "form-control mr-sm-2", prompt:{}, placeholder: "タスク名" %><br>
@@ -18,13 +22,15 @@
           </p>
         <% end %>
       </form>
+
+      <%# ボタン：　タスク作成 %>
       <div>
         <%= render 'form' %>
       </div>
 
       <%# ボタン：　タグ作成 %>
       <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'tags') %>&nbsp;<%= link_to "タグ作成", root_path %></button></h6>
+        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'tags') %>&nbsp;<%= link_to "タグ作成", tags_path %></button></h6>
       </div>
 
       <%# ボタン：　ヘルプ%>
