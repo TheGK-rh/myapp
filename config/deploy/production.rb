@@ -4,6 +4,6 @@ server '54.150.219.103',
  ssh_options: {
    port: 22,
    user: "ryo",
-   keys: ["#{ENV.fetch('PRODUCTION_SSH_KEY')}"],
+   keys: '~/.ssh/myapp_key_rsa',
    forward_agent: true
  }
