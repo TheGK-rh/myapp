@@ -11,6 +11,7 @@ class Task < ApplicationRecord
   has_many :attachments
 
   validates :title, presence: true
+  validates :category_id, presence: true
 
   def self.search(search)
     return Task.all unless search
