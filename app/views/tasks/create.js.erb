@@ -1,6 +1,7 @@
 $("textarea").val("");
 $("input").val("");
 $('#exampleModal').modal('hide');
+$("#error_explanation").html("<%= j(render 'error', { task: @task }) %>")
 $('.todolist').html("<%= escape_javascript(render 'todolist', tasks: @tasks) %>");
 $('.onworking').html("<%= escape_javascript(render 'onworking', tasks: @tasks) %>");
 $('.completed').html("<%= escape_javascript(render 'completed', tasks: @tasks) %>");

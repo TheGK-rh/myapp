@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      task:
+        title: タイトル
+      category:
+        name: カテゴリー名
+      description:
+        description: タスク詳細
+      subtask:
+        name: サブタスク名
+      tag:
+        name: タグ名
+      comment:
+        body: コメント
+      attachment:
+        image: ファイル

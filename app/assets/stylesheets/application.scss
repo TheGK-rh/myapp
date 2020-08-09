@@ -21,6 +21,19 @@ body{
   background-color: yellow;
 }
 
+//flash messageのCSS//
+.notice{
+  background-color: #3399FF;
+  color: white;
+  text-align: center;
+}
+
+.alert{
+  background-color: #FF3333;
+  color: white;
+  text-align: center;
+}
+
 //indexのCSS//
 .link-mypage a{
   text-decoration: none;

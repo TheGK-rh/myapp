@@ -26,7 +26,6 @@
             メニュー
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/teams">チーム一覧</a>
             <a class="dropdown-item" href="#">タグ一覧/作成</a>
             <% if user_signed_in? %>
               <%= link_to "マイページ", profile_path(current_user.id), class: "dropdown-item" %>
@@ -37,8 +36,11 @@
       </ul>
     </div>
   </nav>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="mt-3">
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+  </div>
     <div class="container">
       <%= yield %>
     </div>
