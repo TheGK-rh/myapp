@@ -6,6 +6,7 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.search(params[:search])
     @task = Task.new
+    @tags = Tag.where(user_id: current_user.id)
   end
 
   def show

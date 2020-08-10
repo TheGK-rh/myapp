@@ -1,5 +1,5 @@
 <% unless @user == current_user %>
-  <div id="follow_form">
+  <div class="my-3" id="follow_form">
     <% if current_user.following?(@user) %>
       <%= render 'devise/shared/unfollow' %>
     <% else %>

@@ -14,7 +14,9 @@
             <br>
             <%= collection_select(:task, :category_id, Category.all, :id, :name, {prompt: "カテゴリを選択してください(必須)"}, {class: "form-control"} )%>
             <br>
-            <%= collection_select(:task, :tag_ids, Tag.all, :id, :name, {prompt: "タグを選択してください(複数選択可)"}, { multiple: true, size: 2, class: "form-control" }) %>
+            <% if @tags.any? %>
+              <%= collection_select(:task, :tag_ids, @tags, :id, :name, {prompt: "タグを選択してください(複数選択可)"}, { multiple: true, size: 2, class: "form-control" }) %>
+            <% end %>
             <br>
             <%= f.date_field :term, class: "form-control" %>
           </div>

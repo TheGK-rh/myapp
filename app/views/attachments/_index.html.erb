@@ -1,8 +1,8 @@
 <% attachments.each do |attachment| %>
-  <div id="attachment-<%= attachment.id %>">
-    <h6><%= attachment.image_identifier %>&nbsp;&nbsp;&nbsp;
+  <div class="attachment" id="attachment-<%= attachment.id %>">
+    <li><%= attachment.image_identifier %>&nbsp;&nbsp;&nbsp;
     <%= link_to download_task_attachment_path(attachment.task, attachment), data: { turbolinks: "false", confirm: 'ダウンロードしますか?' }, method: :get do %>
       ダウンロード<%= icon('fas', 'download') %>
-    <% end %></h6>
+    <% end %></li>
   </div>  　　
 <% end %>

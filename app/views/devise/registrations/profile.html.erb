@@ -1,24 +1,23 @@
 <div class="container mt-5">
   <div class="row">
 
-    <div class="col-4">
-      <div class="card user-prof" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= @user.name %></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= @user.id %></h6>
-          <section class="stats card-text">
-            <%= render 'devise/shared/stats' %>
-          </section>
-          <br>
-          <section class="card-text">
-            <%= render 'devise/shared/follow_form' if user_signed_in? %>
-          </section>
-          <%= link_to "アカウント編集", edit_user_registration_path %>
-        </div>
+    <div class="col-12">
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.name %></h5>
+        <p class="card-text">
+          <%= render 'devise/shared/stats' %>
+          <%= render 'devise/shared/follow_form' if user_signed_in? %>
+        </p>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <% if user_signed_in? %>
+          <% if @user.id == current_user.id %>
+            <%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-primary btn-sm" %>
+          <% end %>
+        <% end %>
       </div>
-    </div>
 
-    <div class="col-8">
+      <br><br>
+
       <form class="form-inline my-2 my-lg-0">
         <%= form_tag(profile_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
           <%= text_field_tag :search, "", class: "form-control mr-sm-2", prompt:{}, placeholder: "ユーザー名orメールアドレス" %>
@@ -27,19 +26,27 @@
       </form>
       <br>
       <table class="table">
-        <thead style="background: dodgerblue;">
+        <thead style="background: dodgerblue; color: white;">
           <tr>
             <th scope="col">ID：</th>
             <th scope="col">ユーザーネーム：</th>
+            <th scope="col">フォロー：</th>
+            <th scope="col">フォロワー：</th>
           </tr>
         </thead>
         <% @users.each do |user| %>
-          <tbody>
-            <tr>
-              <th scope="row"><%= user.id %></th>
-              <td><%= link_to user.name, profile_path(user) %></td>
-            </tr>
-          </tbody>
+          <% if user_signed_in? %>
+            <% if user.id != current_user.id %>
+              <tbody>
+                <tr>
+                  <th scope="row"><%= user.id %></th>
+                  <td><%= link_to user.name, profile_path(user) %></td>
+                  <td><%= user.followings.count %></td>
+                  <td><%= user.followers.count %></td>
+                </tr>
+              </tbody>
+            <% end %>
+          <% end %>
         <% end %>
       </table>
     </div>

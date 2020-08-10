@@ -44,7 +44,7 @@ body{
 }
 
 //タスクCardのCSS//
-.card{
+.card-index{
   border-top: solid 3px dodgerblue;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   border-radius: 10px;
@@ -77,6 +77,12 @@ body{
   margin-left: 20px
 }
 
+.attachment{
+  margin-top: 1px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
 //Devise View PageのCSS//
 .user-title{
   font-family: "Osaka-Mono";
@@ -103,15 +109,6 @@ body{
 
 .user-name{
   font-family: "Osaka-Mono";
-}
-
-.follow-show{
-  border: solid 1px dodgerblue;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-  border-radius: 10px;
-  background: #f0f7ff;
-  padding-top: 20px;
-  margin-bottom: 3px;
 }
 
 //tag index pageのCSS//
