@@ -17,7 +17,4 @@ if Rails.env.production?
     aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
     region: 'ap-northeast-1' #東京
   }
-else
-  config.storage :file
-  config.enable_processing = false if Rails.env.test? #test :処理スキップ
 end
