@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers:{
     registrations: 'users/registrations',
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
   }
   devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
     get 'profile/:id/' => 'users/registrations#profile', as: 'profile'
     get 'profile/:id/following', to: 'users/registrations#following', as: 'following'
     get 'profile/:id/followers', to: 'users/registrations#followers', as: 'followers'
