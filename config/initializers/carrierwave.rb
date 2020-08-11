@@ -6,7 +6,7 @@ require 'carrierwave/storage/fog'
 CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 
 if Rails.env.production?
-  config.storage = :fog
+  config.storage :fog
   config.fog_provider = 'fog/aws'
   config.fog_directory = 'lemonfish'
   #IAM_profile
