@@ -23,6 +23,13 @@ class User < ApplicationRecord
 
   has_many :followers, through: :passive_relationships, source: :follower
 
+  #ゲストログイン機能
+  def self.guest
+    find_or_create_by!(name: 'ゲストユーザー', email: 'guest@example.com' ) do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
   # ユーザーをフォローする
   def follow(other_user)
     active_relationships.create(following_id: other_user.id)
