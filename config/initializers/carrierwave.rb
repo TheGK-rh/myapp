@@ -8,7 +8,7 @@ CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
-    config.fog_provider = 'fog/aws'
+    config.fog_provider = 'fog-aws'
     config.fog_directory = 'lemonfish'
     #IAM_profile
     config.fog_credentials = {
