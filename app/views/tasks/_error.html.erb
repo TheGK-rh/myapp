@@ -1,0 +1,10 @@
+<%# エラーメッセージ %>
+<% if @task.errors.any? %>
+  <div class="alert alert-danger">
+    <h4><%= pluralize( @task.errors.count, "エラー" ) %>：下記を確認の上、再度入力してください:</h4>
+      <% @task.errors.full_messages.each do |message| %>
+        <h6><%= message %></h6>
+      <% end %>
+  </div>
+  <br>
+<% end %>

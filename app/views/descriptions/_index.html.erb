@@ -2,7 +2,7 @@
   <div class="card md-1" id="description-<%= description.id %>">
     <div class="card-body">
       <p class="card-text">
-        <%= simple_format description.description %>
+        <%= simple_format description.description, style: "font-size: 16px;" %>
       </p>
         <%= link_to edit_task_description_path(description.task, description) do %>
           <%= icon('fas', 'edit') %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'profile/:id/followers', to: 'users/registrations#followers', as: 'followers'
   end
   resources :relationships, only: [:create, :destroy]
+  resources :tags, except: [:show]
   resources :tasks do
     member do
       patch :gotowork
@@ -30,8 +31,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  resources :teams
 
   root "tasks#index"
 

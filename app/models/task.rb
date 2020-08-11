@@ -10,7 +10,8 @@ class Task < ApplicationRecord
   has_many :tags, through: :task_tags
   has_many :attachments
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 20 }
+  validates :category_id, presence: true
 
   def self.search(search)
     return Task.all unless search

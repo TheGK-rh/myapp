@@ -26,6 +26,7 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'carrierwave', '~> 2.1'
 gem 'fog-aws', '~> 3.6', '>= 3.6.6'
 gem 'i18n'
+gem 'rails-i18n', '5.1'
 
 
 group :development, :test do

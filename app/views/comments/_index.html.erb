@@ -1,13 +1,11 @@
 <% comments.each do |comment| %>
-  <div class="card md-1" id="comment-<%= comment.id %>">
+  <div class="card" id="comment-<%= comment.id %>">
     <div class="card-body">
-      <p class="card-text">
-        <%= comment.user.name %>：&emsp;
-        <%= comment.body %>　　
-        <%= link_to task_comment_path(comment.task, comment), method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "destroy" do %>
-          <%= icon('fas', 'trash-alt') %>
-        <% end %>
-      </p>
+      <%= comment.user.name %>：&emsp;
+      <%= comment.body %>　　
+      <%= link_to task_comment_path(comment.task, comment), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
+        <%= icon('fas', 'trash-alt') %>
+      <% end %>
     </div>
   </div>
 <% end %>
