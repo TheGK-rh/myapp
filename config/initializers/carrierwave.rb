@@ -1,6 +1,6 @@
-require 'carrierwave/storage/abstract'
-require 'carrierwave/storage/file'
-require 'carrierwave/storage/fog'
+#require 'carrierwave/storage/abstract'
+#require 'carrierwave/storage/file'
+#require 'carrierwave/storage/fog'
 
 #画像名に日本語が使用可能
 CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
