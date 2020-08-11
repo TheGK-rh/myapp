@@ -355,7 +355,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.7, >= 4.7.2)
   factory_bot_rails
-  fog-aws (~> 3.6, >= 3.6.6)
+  fog-aws (= 3.6.6)
   font-awesome-sass (~> 5.13)
   i18n
   jbuilder (~> 2.5)
