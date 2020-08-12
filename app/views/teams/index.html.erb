@@ -2,40 +2,44 @@
   <div class="row mt-5">
 
     <div class=" task-index-menu col-3">
+      <%# ボタン：　プロフィールへ %>
       <div class="mb-3 mt-3">
         <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'user') %>&nbsp;<%= link_to current_user.name, profile_path(current_user.id) %></button></h6>
       </div>
+      <%# ボタン：　プロジェクト作成 %>
       <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'users') %>&nbsp;<%= link_to "チーム作成", new_team_path %></button></h6>
+        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'project-diagram') %>&nbsp;<%= link_to "プロジェクト作成", teams_path %></button></h6>
       </div>
+      <%# ボタン：　タスク一覧へ %>
       <div class="mb-3 mt-3">
         <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'fish') %>&nbsp;<%= link_to "タスク一覧", tasks_path %></button></h6>
       </div>
     </div>
 
+    <%# プロジェクト一覧 %>
     <div class="col-5">
-      <div class="card-deck">
-        <% @teams.each do |team| %>
-          <% if user_signed_in? %>
-            <% if team.owner.id == current_user.id || team.team_members.ids.include?(current_user.id)%>
-              <div class="card">
-                <div class="card-body">
-                  <h6 class="card-title"><%= icon('fas', 'lemon', style: "color: yellow;") %>
-                    チーム名：<br><br><%= link_to team.team_name, team_path(team) %>
-                  </h6>
-                  <p class="card-text">
-                    オーナー：&nbsp;<%= team.owner.name %>
-                  </p>
-                  <p class="card-text">
-                    メンバー：&nbsp;<%= render 'team_members', teams: team %>
-                  </p>
-                </div>
+      <% @teams.each do |team| %>
+        <% if user_signed_in? %>
+          <% if team.owner.id == current_user.id || team.team_members.ids.include?(current_user.id)%>
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title"><%= icon('fas', 'lemon', style: "color: yellow;") %>
+                  プロジェクト名：<%= link_to team.team_name, team_path(team) %>
+                </h6>
+                <p class="card-text">
+                  オーナー：&nbsp;<%= team.owner.name %>
+                </p>
+                <p class="card-text">
+                  メンバー：&nbsp;<%= render 'team_members', teams: team %>
+                </p>
+                <% if team.owner.id == current_user.id %>
+                  <p class="mb-0" style="text-align: right;" >編集/削除</p>
+                <% end %>
               </div>
-            <% end %>
+            </div>
           <% end %>
         <% end %>
-      </div>
+      <% end %>
     </div>
-
   </div>
 </div>

@@ -1,6 +1,15 @@
-<%= form_for @team do |f| %>
-  <%= f.label :team_name, "チーム名" %>
-  <%= f.text_field :team_name %>
-  <%= collection_select(:team, :team_member_ids, @user, :id, :name, { prompt: "Select" }, { multiple: true }) %>
-  <%= f.submit "作成" %>
-<% end %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-5">
+      <div class="form-group">
+        <%= form_for @team do |f| %>
+          <h5><%= f.label :team_name, "プロジェクト名" %></h5>
+          <%= f.text_field :team_name, class: "form-control" %>
+          <h5><%= f.label :team_member_ids, "参加メンバー選択" %></h5>
+          <%= collection_select(:team, :team_member_ids, @user, :id, :name, { prompt: "参加メンバーを選択" }, { multiple: true, size: 3, class: "form-control" }) %>
+          <%= f.submit "プロジェクト作成", class: "btn btn-primary btn-sm" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

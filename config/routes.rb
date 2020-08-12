@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  #ユーザー機能：Devise(including Follow function)
   devise_for :users, controllers:{
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -39,6 +40,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  #Team機能
+  #resources :teams
 
   root "tasks#index"
 
