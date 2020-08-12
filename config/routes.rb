@@ -11,8 +11,14 @@ Rails.application.routes.draw do
     get 'profile/:id/following', to: 'users/registrations#following', as: 'following'
     get 'profile/:id/followers', to: 'users/registrations#followers', as: 'followers'
   end
+  #フォロー機能
   resources :relationships, only: [:create, :destroy]
-  resources :tags, except: [:show]
+  #タグ機能
+  resources :tags, except: :show
+  #アクティビティ・通知機能
+  resources :notifications, only: :index
+  resources :activities, only: :index
+  #基本機能（タスク関連）
   resources :tasks do
     member do
       patch :gotowork
