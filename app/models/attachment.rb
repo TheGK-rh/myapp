@@ -4,6 +4,7 @@ class Attachment < ApplicationRecord
   belongs_to :task
   belongs_to :user
 
+  #Validation
   validates :image, presence: true
 
 end

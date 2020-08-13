@@ -44,6 +44,10 @@
         </div>
       <% end %>
       <br>
+      <div class="actions">
+        <%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post, class: "btn btn-primary" %>
+      </div>
+      <br>
 
       <%= render "devise/shared/links" %>
     </div>

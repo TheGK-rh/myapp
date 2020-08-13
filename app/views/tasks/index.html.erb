@@ -45,7 +45,15 @@
 
       <%# ボタン：　通知 %>
       <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'bell') %>&nbsp;<%= link_to "通知", notifications_path %></button></h6>
+        <h6><button type="button" class="btn btn-outline-primary link-mypage" >
+          <% if unchecked_notifications.any? %>
+            <%= icon('fas', 'circle', style: "font-size: 2px;", class: "notification-bell") %>
+            <%= icon('fas', 'bell') %>
+          <% else %>
+            <%= icon('fas', 'bell') %>
+          <% end %>
+          &nbsp;<%= link_to "通知", notifications_path %>
+        </button></h6>
       </div>
 
       <%# ボタン：　ヘルプ%>

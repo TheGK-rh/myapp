@@ -5,7 +5,8 @@
       <%= f.text_area :description, class: "form-control" %>
     </div>
   </div>
-  <div class="modal-footer">
-    <%= f.submit "編集", class: "btn btn-primary" %>
+  <div class="modal-footer btn-group">
+    <%= f.submit "編集", class: "btn btn-primary btn-sm" %>
+    <%= link_to "戻る", task_path(@task), class: "btn btn-danger btn-sm" %>
   </div>
 <% end %>

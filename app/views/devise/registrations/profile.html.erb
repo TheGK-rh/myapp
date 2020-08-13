@@ -8,10 +8,10 @@
           <%= render 'devise/shared/stats' %>
           <%= render 'devise/shared/follow_form' if user_signed_in? %>
         </p>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <% if user_signed_in? %>
           <% if @user.id == current_user.id %>
             <%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-primary btn-sm" %>
+            <%= link_to "タスク一覧", root_path, class: "btn btn-primary btn-sm" %>
           <% end %>
         <% end %>
       </div>

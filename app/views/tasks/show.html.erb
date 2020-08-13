@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <% if @task.user_id == current_user.id %>
-    <div class="container task-cont mt-3">
+    <div class="container task-cont mt-3 mb-3">
       <h2><u><%= icon('fas', 'fish', style: "color: dodgerblue;") %>　<%= @task.title %></u></h2>
       <br>
       <h5><span class="badge badge-primary"><%= @task.category.name %></span></h5>
@@ -79,6 +79,15 @@
       </div>
       <br>
 
+      <%# ボタン：編集・削除 %>
+      <p style="text-align: right; font-size:18px;">
+        <%= link_to edit_task_path(@task) do %>
+          <%= icon('fas', 'edit') %>編集/
+        <% end %>
+        <%= link_to task_path(@task), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" } do %>
+          <%= icon('fas', 'trash-alt') %>削除
+        <% end %>
+      </p>
     </div>
   <% else %>
     <h4>表示できません。</h4>

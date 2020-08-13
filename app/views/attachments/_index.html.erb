@@ -1,8 +1,17 @@
 <% attachments.each do |attachment| %>
   <div class="attachment" id="attachment-<%= attachment.id %>">
-    <li><%= attachment.image_identifier %>&nbsp;&nbsp;&nbsp;
-    <%= link_to download_task_attachment_path(attachment.task, attachment), data: { turbolinks: "false", confirm: 'ダウンロードしますか?' }, method: :get do %>
-      ダウンロード<%= icon('fas', 'download') %>
-    <% end %></li>
+    <li>
+      <%= attachment.image_identifier %>&nbsp;&nbsp;&nbsp;
+      <%= link_to download_task_attachment_path(attachment.task, attachment), data: { turbolinks: "false", confirm: 'ダウンロードしますか?' }, method: :get do %>
+        ダウンロード<%= icon('fas', 'download') %>
+      <% end %>
+      <% if user_signed_in? %>
+        <% if attachment.task.user_id == current_user.id %>
+          <%= link_to task_attachment_path(attachment.task, attachment), data: { confirm: "削除します。よろしいですか。" }, method: :delete do %>
+            /削除<%= icon('fas', 'trash') %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </li>
   </div>  　　
 <% end %>
