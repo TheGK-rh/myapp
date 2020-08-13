@@ -1,15 +1,17 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
 
-<div class="col-md-6.mx-auto">
-  <div class="form-inline">
-    <%= visitor.name %>さんが
-    <% case notification.action %>
-      <% when 'follow' then %>
-        あなたをフォローしました
-      <% end %>
-    <div class="small.text-muted.text-right">
-      <%= time_ago_in_words(notification.created_at).upcase %>
-    </div>
-  </div>
+<div class="card" style="width: 20rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <%= link_to visitor.name, profile_path(visitor) %>さんが
+      <% case notification.action %>
+        <% when 'follow' then %>
+          あなたをフォローしました
+        <% end %>
+      <div class="small.text-muted.text-right">
+        <%= time_ago_in_words(notification.created_at).upcase %>
+      </div>
+    </li>
+  </ul>
 </div>

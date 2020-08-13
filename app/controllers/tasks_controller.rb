@@ -28,6 +28,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @tags = Tag.where(user_id: current_user.id)
   end
 
   def update

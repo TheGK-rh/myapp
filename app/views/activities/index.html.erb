@@ -1,10 +1,17 @@
-<div class="activity">
+<div class="container mt-5">
+
+  <h4 style="color: dodgerblue;"><%= icon('fas', 'bell') %>&nbsp;アクティビティ</h4>
+
   <% if @activities.exists? %>
     <% @activities.each do |activity| %>
       <%= render 'activities/activity', activity: activity %>
     <% end %>
   <% else %>
-    <p>アクティビティはありません</p>
+  <div class="card" style="width: 20rem;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">アクティビティはありません</li>
+    </ul>
+  </div>    
   <% end %>
 
 </div>

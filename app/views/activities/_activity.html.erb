@@ -1,15 +1,17 @@
 <% visitor = activity.visitor %>
 <% visited = activity.visited %>
 
-<div class="col-md-6.mx-auto">
-  <div class="form-inline">
-    <% case activity.action %>
-      <% when 'follow' then %>
-        <%= visited.name %>
-        さんをフォローしました
-      <% end %>
-    <div class="small.text-muted.text-right">
-      <%= time_ago_in_words(activity.created_at).upcase %>
-    </div>
-  </div>
+<div class="card" style="width: 20rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <% case activity.action %>
+        <% when 'follow' then %>
+          <%= visited.name %>
+          さんをフォローしました
+        <% end %>
+      <div class="small.text-muted.text-right">
+        <%= time_ago_in_words(activity.created_at).upcase %>
+      </div>
+    </li>
+  </ul>
 </div>
