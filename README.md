@@ -1,12 +1,15 @@
 # Lemonfish
 
-(https://user-images.githubusercontent.com/61115238/90268954-caf70800-de92-11ea-98d3-d8d93c402cbe.png)
+![スクリーンショット 2020-08-15 0 59 51](https://user-images.githubusercontent.com/61115238/90268954-caf70800-de92-11ea-98d3-d8d93c402cbe.png)
 Lemonfishは日常の用事や仕事上のタスクを管理するToDoListサービスです。
 開発にはRuby/Ruby on Rails、インフラにはAWSを使用しています。（詳細は後述）
 
+
 ## URL
-http://lemonfish.link
+https://lemonfish.link
+
 ログイン画面の「簡単ログイン」をクリックすると、入力なしでログインすることが可能です。
+
 
 ## 使用技術
 - Ruby 2.6.6/Ruby on Rails 5.2.4.3
@@ -19,11 +22,12 @@ http://lemonfish.link
 - Docker/docker-compose
 - git/github(pull requestやissueなどの機能を使っています)
 
+
 ## インフラ構成図
 
-(https://github.com/TheGK-rh/myapp/files/5075344/c67949ed-41fb-4bea-92b8-451d2c2c4b24.pdf)
-画像
+[c67949ed-41fb-4bea-92b8-451d2c2c4b24.pdf](https://github.com/TheGK-rh/myapp/files/5075344/c67949ed-41fb-4bea-92b8-451d2c2c4b24.pdf)
 ※開発環境でDocker/docker-composeを使用しているので、CapistranoでのデプロイからECS/ECRへ変更するべく勉強しています。
+
 
 ## 機能一覧
 
@@ -49,6 +53,7 @@ http://lemonfish.link
 - アクティビティログ・通知機能
   - 他ユーザーがフォローした場合、通知（未読通知有り無しで表示切り替え）
   - ユーザーの他ユーザーフォロー、タスク作成等のユーザーアクティビティのログを表示　
+
 
 ## 課題
 - UI/UXのブラッシュアップ、フロント側のスキル・知識アップ
