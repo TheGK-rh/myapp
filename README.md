@@ -25,7 +25,7 @@ https://lemonfish.link
 
 ## インフラ構成図
 
-[c67949ed-41fb-4bea-92b8-451d2c2c4b24.pdf](https://github.com/TheGK-rh/myapp/files/5075344/c67949ed-41fb-4bea-92b8-451d2c2c4b24.pdf)
+![c67949ed-41fb-4bea-92b8-451d2c2c4b24](https://user-images.githubusercontent.com/61115238/90270115-a9971b80-de94-11ea-9942-c4660275e041.png)
 ※開発環境でDocker/docker-composeを使用しているので、CapistranoでのデプロイからECS/ECRへ変更するべく勉強しています。
 
 
