@@ -20,10 +20,10 @@ jobs:
           name: bundler install
           command: gem install bundler -v 2.1.4
 
-      - run:
-          name: default mysql client install
-          command:
-            sudo apt-get install -y default-mysql-client
+      #- run:
+          #name: default mysql client install
+          #command:
+            #sudo apt-get install -y default-mysql-client
 
       - restore_cache:
           keys:
