@@ -10,9 +10,11 @@
               <%= link_to task.title, task_path(task) %>
             </h6>
             <p>
-              期日：<%= task.term %>
+              <% if task.term %>
+                期日：<%= task.term %>
+              <% end %>
             </p>
-            <p>
+            <p style="font-size: 16px;">
               <% if task.tags.any? %>
                 <%= render task.tags %>
               <% end %>
