@@ -20,6 +20,7 @@ jobs:
           name: bundler install
           command: gem install bundler -v 2.1.4
 
+      #2020/08/14エラー発生。Versionの問題？調査
       #- run:
           #name: default mysql client install
           #command:

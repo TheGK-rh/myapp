@@ -8,14 +8,15 @@ Lemonfishは日常の用事や仕事上のタスクを管理するToDoListサー
 ## URL
 https://lemonfish.link
 
-ログイン画面の「簡単ログイン」をクリックすると、入力なしでログインすることが可能です。
+- AWS: ALB、ACMでSSL化しています。
+- ログイン画面の「簡単ログイン」をクリックすると、入力なしでログインすることが可能です。
 
 
 ## 使用技術
 - Ruby 2.6.6/Ruby on Rails 5.2.4.3
 - MySQL 5.7
 - Nginx, Unicorn
-- AWS (VPC, EC2, RDS, Route53, ACM, S3)
+- AWS (VPC, EC2, RDS, Route53, ALB、ACM, S3)
 - CircleCI (CI/CDパイプライン構築)
 - Capistrano
 - Rspec/Rubocop
@@ -26,7 +27,8 @@ https://lemonfish.link
 ## インフラ構成図
 
 ![c67949ed-41fb-4bea-92b8-451d2c2c4b24](https://user-images.githubusercontent.com/61115238/90270115-a9971b80-de94-11ea-9942-c4660275e041.png)
-※開発環境でDocker/docker-composeを使用しているので、CapistranoでのデプロイからECS/ECRへ変更するべく勉強しています。
+- ※開発環境でDocker/docker-composeを使用しているので、CapistranoでのデプロイからECS/ECRへ変更するべく勉強しています。
+- 構成図はLucidchartで作成。
 
 
 ## 機能一覧
@@ -58,6 +60,5 @@ https://lemonfish.link
 ## 課題
 - UI/UXのブラッシュアップ、フロント側のスキル・知識アップ
   - 「一目でわかる」、「クリック回数を少なく」、「非同期」など意識して製作は進めたものの、技術・知識不足から満足いく形にはなっていないので、JSなどの知識を高めていきたい。
-- テストが十分に書かれていない
-  継続してRSpecのスキルアップを行なっています。
+- テストが十分に書かれていない。（継続してRSpecのスキルアップを行なっています。）
 - ※フォロワーとのタスク共有は機能的に不自然なため、フォロー機能をリクエスト型のフレンド機能(ユーザーがリクエスト、他ユーザー承認など)へ変更すべき。
