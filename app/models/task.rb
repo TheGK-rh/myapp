@@ -11,6 +11,10 @@ class Task < ApplicationRecord
   has_many :tags, through: :task_tags
   has_many :attachments
 
+  #シェア機能
+  has_many :shares, dependent: :destroy
+  has_many :task_shares, through: :shares, source: :user
+
   #Validation
   validates :title, presence: true, length: { maximum: 20 }
   validates :category_id, presence: true

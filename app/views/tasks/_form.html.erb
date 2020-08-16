@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
   <%= icon('fas', 'fish') %>&nbsp;タスク作成
 </button>
 
@@ -19,6 +19,10 @@
             <% end %>
             <br>
             <%= f.date_field :term, class: "form-control" %>
+            <br>
+            <% if @members.any? %>
+              <%= collection_select(:task, :task_share_ids, @members, :id, :name, {prompt: "フォロワーとタスクを共有する"}, { multiple: true, size: 2, class: "form-control" }) %>
+            <% end %>
           </div>
         </div>
         <div class="modal-footer">

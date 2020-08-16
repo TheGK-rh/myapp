@@ -31,3 +31,6 @@
 
 /db/migrate/20200812010542_notifications.rb
 /db/migrate/20200812011036_notices.rb
+
+/spec/.DS_Store
+/spec/fixtures/.DS_Store

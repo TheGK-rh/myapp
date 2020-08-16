@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_012042) do
+ActiveRecord::Schema.define(version: 2020_08_16_035215) do
 
   create_table "attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -72,6 +72,13 @@ ActiveRecord::Schema.define(version: 2020_08_12_012042) do
     t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
+  create_table "shares", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "task_id"
+    t.index ["task_id"], name: "index_shares_on_task_id"
+    t.index ["user_id"], name: "index_shares_on_user_id"
+  end
+
   create_table "subtasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "task_id"
@@ -125,5 +132,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_012042) do
 
   add_foreign_key "members", "teams"
   add_foreign_key "members", "users"
+  add_foreign_key "shares", "tasks"
+  add_foreign_key "shares", "users"
   add_foreign_key "teams", "users"
 end
