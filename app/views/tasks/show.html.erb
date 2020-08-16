@@ -1,39 +1,66 @@
 <% if user_signed_in? %>
   <% if @task.user_id == current_user.id || @task.task_shares.ids.include?(current_user.id) %>
     <div class="container task-cont mt-3 mb-3">
+
+      <%# タスクタイトル/カテゴリー %>
       <h2><u><%= icon('fas', 'fish', style: "color: dodgerblue;") %>　<%= @task.title %></u></h2>
       <br>
-      <h5><span class="badge badge-primary"><%= @task.category.name %></span></h5>
+      <h5><span class="badge badge-pill badge-primary"><%= @task.category.name %></span></h5>
+      <br>
+
+      <%# シェア機能 %>
+      <h6 class="ml-3">
+        <% if @task.user_id == current_user.id %>
+          <% if @task.task_shares.any? %>
+            <%= icon('fas', 'project-diagram', style: "color: red;") %>
+            <span class="badge badge-pill badge-danger">Shared</span>
+            <% @share_members.each do |member| %>
+              &nbsp;<%= link_to member.name, profile_path(member) %>さん
+            <% end %>
+            とタスクを共有しています。
+          <% end %>
+        <% elsif @task.task_shares.ids.include?(current_user.id) %>
+          <%= icon('fas', 'project-diagram', style: "color: red;") %>
+          <span class="badge badge-pill badge-danger">Shared</span>
+          &nbsp;タスクの作成者は<%= link_to @task.user.name, profile_path(@task.user_id) %>さんです。
+        <% end %>
+      </h6>
       <br>
       <br>
 
       <%# ビュー：　タスク詳細 %>
-      <h6>
+      <h5>
         <%= render partial: 'descriptions/form', locals: { description: @description, task: @task } %>
         タスク詳細
-      </h6>
+      </h5>
       <div id="descriptions_area">
         <%= render partial: 'descriptions/index', locals: { descriptions: @descriptions } %>
       </div>
       <br>
 
       <%# ビュー：　サブタスク%>
-      <h6>
+      <h5>
         <%= render partial: 'subtasks/form', locals: { subtask: @subtask, task: @task } %>
         サブタスク
-      </h6>
+      </h5>
       <div id="subtasks_area">
         <%= render partial: 'subtasks/index', locals: { subtasks: @subtasks } %>
       </div>
       <br>
 
       <%# ビュー：　タグ %>
-      <h6>
-        <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
-          <%= icon('fas', 'tags') %>
+      <h5>
+        <% if @task.user_id == current_user.id %>
+          <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
+            <%= icon('fas', 'tags') %>
+          <% end %>
+        <% elsif @task.task_shares.ids.include?(current_user.id) %>
+          <%= link_to task_path(@task), class: "btn btn-link" do %>
+            <%= icon('fas', 'tags') %>
+          <% end %>
         <% end %>
         タグ
-      </h6>
+      </h5>
       <div class="tag-show">
         <% if @task.tags.any? %>
           <%= render @task.tags %>
@@ -42,35 +69,41 @@
       <br>
 
       <%# ビュー：　期日 %>
-      <h6>
-        <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
-          <%= icon('fas', 'calendar-alt') %>
+      <h5>
+        <% if @task.user_id == current_user.id %>
+          <%= link_to edit_task_path(@task), class: "btn btn-link" do %>
+            <%= icon('fas', 'calendar-alt') %>
+          <% end %>
+        <% elsif @task.task_shares.ids.include?(current_user.id) %>
+          <%= link_to task_path(@task), class: "btn btn-link" do %>
+            <%= icon('fas', 'calendar-alt') %>
+          <% end %>
         <% end %>
         期日
-      </h6>
+      </h5>
       <div class="term-show">
         <%= @task.term %>
       </div>
       <br>
 
       <%# ビュー：　ファイル  %>
-      <h6>
+      <h5>
         <%= link_to task_path(@task), class: "btn btn-link" do %>
           <%= icon('fas', 'file-alt') %>
         <% end %>
         ファイル
-      </h6>
+      </h5>
       <%= render partial: 'attachments/index', locals: { attachments: @attachments } %>
       <%= render partial: 'attachments/form', locals: { attachment: @attachment, task: @task } %>
       <br>
 
       <%# ビュー：　コメント %>
-      <h6>
+      <h5>
         <%= link_to task_path(@task), class: "btn btn-link" do %>
           <%= icon('fas', 'comment') %>
         <% end %>
         コメント
-      </h6>
+      </h5>
       <div id="comments_area">
         <%= render partial: 'comments/index', locals: { comments: @comments } %>
       </div>
@@ -80,15 +113,19 @@
       <br>
 
       <%# ボタン：編集・削除 %>
-      <p style="text-align: right; font-size:18px;">
-        <%= link_to edit_task_path(@task) do %>
-          <%= icon('fas', 'edit') %>編集/
-        <% end %>
-        <%= link_to task_path(@task), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" } do %>
-          <%= icon('fas', 'trash-alt') %>削除
-        <% end %>
-      </p>
+      <% if @task.user_id == current_user.id %>
+        <p style="text-align: right; font-size:18px;">
+          <%= link_to edit_task_path(@task) do %>
+            <%= icon('fas', 'edit') %>編集/
+          <% end %>
+          <%= link_to task_path(@task), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" } do %>
+            <%= icon('fas', 'trash-alt') %>削除
+          <% end %>
+        </p>
+      <% end %>
+
     </div>
+
   <% else %>
     <h4>表示できません。</h4>
   <% end %>
