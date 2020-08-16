@@ -1,7 +1,7 @@
 <h6 style="color: dodgerblue;"><%= icon('fas', 'swimmer') %>　<u>作業中</u></h6>
 <% tasks.each do |task| %>
   <% if user_signed_in? %>
-    <% if task.user_id == current_user.id %>
+    <% if task.user_id == current_user.id || task.task_shares.ids.include?(current_user.id) %>
       <% if task.category_id == 2 %>
         <div class="card card-index md-1" id="task-<%= task.id %>">
           <div class="card-body">

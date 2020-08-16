@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <% if @task.user_id == current_user.id %>
+  <% if @task.user_id == current_user.id || @task.task_shares.ids.include?(current_user.id) %>
     <div class="container task-cont mt-3 mb-3">
       <h2><u><%= icon('fas', 'fish', style: "color: dodgerblue;") %>　<%= @task.title %></u></h2>
       <br>

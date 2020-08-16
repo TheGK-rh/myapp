@@ -7,9 +7,11 @@ class TasksController < ApplicationController
     @tasks = Task.search(params[:search])
     @task = Task.new
     @tags = Tag.where(user_id: current_user.id)
+    @members = current_user.followers
   end
 
   def show
+    @share_members = @task.task_shares
     @attachment = Attachment.new
     @attachments = @task.attachments.order("created_at ASC")
     @comment = Comment.new
@@ -29,6 +31,7 @@ class TasksController < ApplicationController
 
   def edit
     @tags = Tag.where(user_id: current_user.id)
+    @members = current_user.followers
   end
 
   def update
@@ -61,7 +64,7 @@ class TasksController < ApplicationController
   private
 
     def task_params
-      params.require(:task).permit(:title, :term, :category_id, :user_id, tag_ids: [])
+      params.require(:task).permit(:title, :term, :category_id, :user_id, tag_ids: [], task_share_ids:[])
     end
 
     def find_task

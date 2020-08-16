@@ -10,6 +10,10 @@ class User < ApplicationRecord
   has_many :comments
   has_many :attachments
 
+  #シェア機能
+  has_many :shares
+  has_many :shareships, through: :shares, source: :task
+
   #Teamの設定
   has_many :teams, dependent: :destroy
   has_many :members
