@@ -1,6 +1,6 @@
 # Lemonfish
 
-![スクリーンショット 2020-08-15 0 59 51](https://user-images.githubusercontent.com/61115238/90268954-caf70800-de92-11ea-98d3-d8d93c402cbe.png)
+![スクリーンショット 2020-08-15 22 02 46](https://user-images.githubusercontent.com/61115238/90312907-24b70b00-df43-11ea-89ee-7957bd3d697c.png)
 Lemonfishは日常の用事や仕事上のタスクを管理するToDoListサービスです。
 開発にはRuby/Ruby on Rails、インフラにはAWSを使用しています。（詳細は後述）
 
@@ -41,7 +41,7 @@ https://lemonfish.link
 
 - タスク機能
   - タスク一覧(カテゴリー別に表示)、詳細表示・投稿・編集・削除機能
-  - タスクのカテゴリー(ToDoList、作業中、完了)をワンクリックで変更可能(ajax使用)
+  - タスクのカテゴリー(ToDoList、作業中、完了)をワンクリックで変更可能
   - タグ付け、タグ作成・削除機能
   - 画像ファイル等のアップロード・ダウンロード機能(Gem: Carrierwave使用)
   - フォロワーとタスク共有可能

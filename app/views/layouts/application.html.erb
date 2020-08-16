@@ -22,9 +22,11 @@
           <a class="nav-link" href="/"><%= icon('fas', 'home') %>&nbsp;Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
+          <%# ホームへのリンク %>
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= icon('fas', 'compass') %>&nbsp;Menu
           </a>
+          <%# メニュードロップダウン %>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <% if user_signed_in? %>
               <%= link_to "マイページ", profile_path(current_user.id), class: "dropdown-item" %>
