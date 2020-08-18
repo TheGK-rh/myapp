@@ -2,10 +2,10 @@
   <div class="row">
 
     <div class="col-3">
-      <div class="tag-form">
+      <div class="tag-form mt-5">
         <%= render 'form', tag: @tag %>
       </div>
-      <h5 class="mt-5">タグ一覧</h5>
+      <h6 class="mt-5"><%= icon('fas', 'tags') %>&nbsp;タグ一覧</h6>
       <div class="tag-index">
         <% @tags.each do |tag| %>
           <% if user_signed_in? %>
@@ -24,19 +24,21 @@
       </div>
     </div>
 
-    <div class="col-5 ml-5">
-      <div class="everytags">
-        <h5>みんなのタグ</h5>
-        <div class="box mt-3">
-          <% @tags.each do |tag| %>
-            <% if user_signed_in? %>
-              <% if tag.user_id != current_user.id %>
-                <span class="badge badge-pill badge-success" style="font-size: 14px;">
-                  <%= tag.name %>
-                </span>
+    <div class="col-8 ml-5">
+      <div class="card mt-5">
+        <div class="card-body everytag">
+          <h5><%= icon('fas', 'tags', style:"color: green;") %>&nbsp;みんなのタグ</h5>
+          <div class="box mt-3 ">
+            <% @tags.each do |tag| %>
+              <% if user_signed_in? %>
+                <% if tag.user_id != current_user.id %>
+                  <span class="badge badge-pill badge-success mb-2" style="font-size: 14px;">
+                    <%= tag.name %>
+                  </span>
+                <% end %>
               <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
