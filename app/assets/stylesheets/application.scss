@@ -114,8 +114,6 @@ body{
   border-radius: 15px;
 }
 
-//User Profile View PageのCSS//
-
 .user-prof{
   border: solid 1px dodgerblue;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
@@ -127,6 +125,36 @@ body{
 .user-name{
   font-family: "Osaka-Mono";
 }
+
+.profile{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+}
+
+.user-search{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+}
+
+.follow-show{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;
+}
+
 
 //tag index pageのCSS//
 .tag-index{
