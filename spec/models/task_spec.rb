@@ -40,27 +40,4 @@ RSpec.describe Task, type: :model do
     end
   end
 
-  describe '#search' do
-    before do
-      user = create(:user)
-      @task = create(
-        :task,
-        user: user,
-        title: 'RSpec検索テスト'
-      )
-      @other_task = create(
-        :task,
-        user: user,
-        title: '問題なく動作している'
-      )
-    end
-
-    context "caption: '検'で検索した場合、曖昧検索できているか" do
-      it '@taskを返すこと' do
-        expect(Task.search(search: '検')).to include(@task)
-      end
-    end
-
-  end
-
 end

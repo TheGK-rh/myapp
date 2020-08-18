@@ -25,10 +25,6 @@ RSpec.describe User, type: :model do
     expect(build(:user, password: "")).to_not be_valid
   end
 
-  #it 'パスワード:passwordが暗号化されているか' do
-    #expect(user.password_digest).to_not eq "password"
-  #end
-
   it 'passwordとpassword_confirmationが異なる場合登録できない' do
     expect(build(:user, password: "password", password_confirmation: "passwooord")).to_not be_valid
   end
