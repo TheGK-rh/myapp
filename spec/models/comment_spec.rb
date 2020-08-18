@@ -8,8 +8,16 @@ RSpec.describe Comment, type: :model do
     expect(comment).to be_valid
   end
 
-  it 'コメントが120文字以上は登録できない' do
-    expect(build(:comment, body: "a" * 120)).to_not be_valid
+  describe '文字数' do
+
+    it '120文字以内は登録できる' do
+      expect(build(:comment, body: "b" * 120)).to be_valid
+    end
+
+    it '120文字以上は登録できない' do
+      expect(build(:comment, body: "a" * 121)).to_not be_valid
+    end
+
   end
 
 

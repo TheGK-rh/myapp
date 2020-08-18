@@ -5,5 +5,7 @@ FactoryBot.define do
     updated_at { Time.now }
     user_id { 1 }
     task_id { 1 }
+    association :user
+    association :task
   end
 end

@@ -8,4 +8,16 @@ RSpec.describe Description, type: :model do
     expect(description).to be_valid
   end
 
+  describe '文字数' do
+
+    it '350文字以内は登録できる' do
+      expect(build(:description, description: "a" * 350)).to be_valid
+    end
+
+    it '350文字以上は登録できない' do
+      expect(build(:description, description: "b" * 351)).to_not be_valid
+    end
+
+  end
+
 end
