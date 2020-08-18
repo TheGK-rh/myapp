@@ -4,18 +4,36 @@ RSpec.describe Tag, type: :model do
 
   let(:tag) { create(:tag) }
 
-  it 'タグ作成が可能である' do
-    expect(tag).to be_valid
-  end
+  describe '有効性' do
 
-  describe '文字数' do
-
-    it '10文字以内は登録できる' do
-      expect(build(:tag, name: "a" * 10)).to be_valid
+    it 'タグ作成が可能である' do
+      expect(tag).to be_valid
     end
 
-    it '10文字以上は登録できない' do
-      expect(build(:tag, name: "b" * 11)).to_not be_valid
+    context 'tag.nameがnilの場合' do
+      it '作成できない' do
+        tag.name = nil
+        expect(tag).to_not be_valid
+      end
+    end
+
+    context 'user_idがnilの場合' do
+      it '作成できない' do
+        tag.user_id = nil
+        expect(tag).to_not be_valid
+      end
+    end
+
+    context '文字数が10文字以内' do
+      it '作成できる' do
+        expect(build(:tag, name: "a" * 10)).to be_valid
+      end
+    end
+
+    context '文字数が10文字以上の場合' do
+      it '作成できない' do
+        expect(build(:tag, name: "b" * 11)).to_not be_valid
+      end
     end
 
   end
