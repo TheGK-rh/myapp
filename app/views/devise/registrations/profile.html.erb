@@ -12,6 +12,8 @@
           <% if @user.id == current_user.id %>
             <%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-primary btn-sm" %>
             <%= link_to "タスク一覧", root_path, class: "btn btn-primary btn-sm" %>
+          <% else %>
+            <%= link_to "マイページ", profile_path(current_user.id), class: "btn btn-primary btn-sm" %>
           <% end %>
         <% end %>
       </div>

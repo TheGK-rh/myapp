@@ -5,13 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #基本機能の設定
-  has_many :tasks
-  has_many :descriptions
-  has_many :comments
-  has_many :attachments
+  has_many :tasks, dependent: :destroy
+  has_many :descriptions, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :attachments, dependent: :destroy
+
+  has_many :tags, dependent: :destroy
 
   #シェア機能
-  has_many :shares
+  has_many :shares, dependent: :destroy
   has_many :shareships, through: :shares, source: :task
 
   #Teamの設定
