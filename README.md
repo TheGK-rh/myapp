@@ -1,7 +1,7 @@
 # Lemonfish
 
-![スクリーンショット 2020-08-15 22 02 46](https://user-images.githubusercontent.com/61115238/90312907-24b70b00-df43-11ea-89ee-7957bd3d697c.png)
-Lemonfishは日常の用事や仕事上のタスクを管理するToDoListサービスです。
+![スクリーンショット 2020-08-18 14 54 32 1](https://user-images.githubusercontent.com/61115238/90475690-e730c880-e162-11ea-9196-d90ded70e0e4.png)
+Lemonfishは日常の用事はもちろんですが、仕事上のタスクを管理するToDoListサービスです。
 開発にはRuby/Ruby on Rails、インフラにはAWSを使用しています。（詳細は後述）
 
 
