@@ -24,15 +24,15 @@ RSpec.describe Tag, type: :model do
       end
     end
 
-    context '文字数が10文字以内' do
+    context '文字数が30文字以内' do
       it '作成できる' do
-        expect(build(:tag, name: "a" * 10)).to be_valid
+        expect(build(:tag, name: "a" * 30)).to be_valid
       end
     end
 
-    context '文字数が10文字以上の場合' do
+    context '文字数が30文字以上の場合' do
       it '作成できない' do
-        expect(build(:tag, name: "b" * 11)).to_not be_valid
+        expect(build(:tag, name: "b" * 31)).to_not be_valid
       end
     end
 
