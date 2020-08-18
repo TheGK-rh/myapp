@@ -1,12 +1,12 @@
 <% visitor = activity.visitor %>
 <% visited = activity.visited %>
 
-<div class="card" style="width: 20rem;">
+<div class="card" style="width: 30rem; font-size: 16px;">
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">
+    <li class="list-group-item activity-list">
       <% case activity.action %>
         <% when 'follow' then %>
-          <%= visited.name %>
+          <%= link_to visited.name, profile_path(visited) %>
           さんをフォローしました
         <% end %>
       <div class="small.text-muted.text-right">

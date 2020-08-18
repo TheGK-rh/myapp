@@ -43,14 +43,6 @@ body{
   color: white;
 }
 
-//Notification BellのCSS//
-.notification-bell{
-  position: absolute;
-  padding-left: 10px;
-  padding-top: 10px;
-  color: red;
-}
-
 //タスクCardのCSS//
 .card-index{
   border-top: solid 3px dodgerblue;
@@ -155,16 +147,35 @@ body{
   background: #93c9ff;
 }
 
-
 //tag index pageのCSS//
 .tag-index{
   font-family: "arial unicode ms";
 }
 
-
-
 .everytag{
   border: solid 1px #DDDDDD;
   border-radius: 10px;
   background: #FFFF99;
+}
+
+//Activity ShowのCSS//
+.activity-list{
+  border: solid 1px #DDDDDD;
+  border-radius: 30px;
+  background: #FFFF99;
+}
+
+//Notification ShowのCSS//
+.notification-list{
+  border: solid 1px #DDDDDD;
+  border-radius: 30px;
+  background: #FFFF99;
+}
+
+//Notification BellのCSS//
+.notification-bell{
+  position: absolute;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: red;
 }

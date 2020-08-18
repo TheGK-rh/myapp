@@ -1,9 +1,9 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
 
-<div class="card" style="width: 20rem;">
+<div class="card" style="width: 30rem; font-size: 16px;">
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">
+    <li class="list-group-item notification-list">
       <%= link_to visitor.name, profile_path(visitor) %>さんが
       <% case notification.action %>
         <% when 'follow' then %>
