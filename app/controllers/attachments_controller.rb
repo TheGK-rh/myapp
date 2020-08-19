@@ -7,7 +7,7 @@ class AttachmentsController < ApplicationController
     @attachment = @task.attachments.build(attachment_params)
     @attachment.user_id = current_user.id
     if @attachment.save
-      redirect_to task_path(@task), , notice: "ファイルをアップロードしました"
+      redirect_to task_path(@task), notice: "ファイルをアップロードしました"
     end
     @attachments = @task.attachments
   end
