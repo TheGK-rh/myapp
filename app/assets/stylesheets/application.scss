@@ -93,17 +93,21 @@ body{
 }
 
 //Devise View PageのCSS//
+.user-new{
+  margin-top: 70px;
+  margin-left: 40px;
+}
+
 .user-title{
   font-family: "Osaka-Mono";
   font-weight: bold;
 }
 
 .user-box{
-  background: #f0f7ff;
+  background: rgba(248, 248, 248, 1);
   padding-top: 15px;
   padding-bottom: 10px;
-  border: solid 1px dodgerblue;
-  border-radius: 15px;
+  border: solid 1px #CCCCCC;
 }
 
 .user-prof{
