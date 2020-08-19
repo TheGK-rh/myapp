@@ -6,7 +6,9 @@ class SubtasksController < ApplicationController
   def create
     @subtask = @task.subtasks.build(subtask_params)
     @subtask.user_id = current_user.id
-    @subtask.save
+    if @subtask.save
+      redirect_to task_path(@task), notice: "サブタスクを作成しました"
+    end
     @subtasks = @task.subtasks
   end
 

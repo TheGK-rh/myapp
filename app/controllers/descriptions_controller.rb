@@ -6,7 +6,9 @@ class DescriptionsController < ApplicationController
   def create
     @description = @task.descriptions.build(description_params)
     @description.user_id = current_user.id
-    @description.save
+    if @description.save
+      redirect_to task_path(@task), notice: "タスク詳細を作成しました"
+    end
     @descriptions = @task.descriptions
   end
 

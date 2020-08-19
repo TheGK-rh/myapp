@@ -6,12 +6,15 @@ class AttachmentsController < ApplicationController
   def create
     @attachment = @task.attachments.build(attachment_params)
     @attachment.user_id = current_user.id
-    @attachment.save
+    if @attachment.save
+      redirect_to task_path(@task), , notice: "ファイルをアップロードしました"
+    end
     @attachments = @task.attachments
   end
 
   def destroy
     @attachment.destroy
+    redirect_to task_path(@task)
   end
 
   def download

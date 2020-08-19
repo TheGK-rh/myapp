@@ -31,15 +31,15 @@ RSpec.describe Subtask, type: :model do
       end
     end
 
-    context '文字数が20文字以内' do
+    context '文字数が100文字以内' do
       it '登録できる' do
-        expect(build(:subtask, name: "a" * 20)).to be_valid
+        expect(build(:subtask, name: "a" * 100)).to be_valid
       end
     end
 
-    context '文字数が20文字以上' do
+    context '文字数が100文字以上' do
       it '登録できない' do
-        expect(build(:subtask, name: "b" * 21)).to_not be_valid
+        expect(build(:subtask, name: "b" * 101)).to_not be_valid
       end
     end
 
