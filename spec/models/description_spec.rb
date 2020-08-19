@@ -31,15 +31,15 @@ RSpec.describe Description, type: :model do
       end
     end
 
-    context '文字数が350文字以内' do
+    context '文字数が1500文字以内' do
       it '登録できる' do
-        expect(build(:description, description: "a" * 350)).to be_valid
+        expect(build(:description, description: "a" * 1500)).to be_valid
       end
     end
 
-    context '文字数が350文字以上' do
+    context '文字数が1500文字以上' do
       it '登録できない' do
-        expect(build(:description, description: "b" * 351)).to_not be_valid
+        expect(build(:description, description: "b" * 1500)).to_not be_valid
       end
     end
 

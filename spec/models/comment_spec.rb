@@ -31,15 +31,15 @@ RSpec.describe Comment, type: :model do
       end
     end
 
-    context '文字数が120文字以内' do
+    context '文字数が300文字以内' do
       it '登録できる' do
-        expect(build(:comment, body: "b" * 120)).to be_valid
+        expect(build(:comment, body: "b" * 300)).to be_valid
       end
     end
 
     context '文字数が120文字以上' do
       it '登録できない' do
-        expect(build(:comment, body: "a" * 121)).to_not be_valid
+        expect(build(:comment, body: "a" * 301)).to_not be_valid
       end
     end
 
