@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container user-new">
   <div class="row">
-    <div class="col-6 user-box">
-      <div class="user-title">
-        <h2 style="letter-spacing: 10px;">
+    <div class="col-5 user-box mt-2">
+      <div class="user-title mt-3">
+        <h2 style="letter-spacing: 5px;">
           <%= icon('fas', 'lemon', style: "color: yellow;") %>
           アカウント作成
         </h2>
@@ -39,17 +39,32 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "再度パスワードを入力してください" %>
           </div>
         </div>
+        <br>
         <div class="actions">
-          <%= f.submit "アカウント作成", class: "btn btn-outline-primary btn-sm"  %>
+          <%= f.submit "アカウント作成", class: "btn btn-outline-primary"  %>
         </div>
       <% end %>
       <br>
-      <div class="actions">
-        <%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post, class: "btn btn-primary" %>
-      </div>
       <br>
 
       <%= render "devise/shared/links" %>
     </div>
+
+    <div class="col-6 ml-3 mt-2 user-box">
+
+      <div class="welcome-message mt-5">
+        <h3>Lemonfishで<br>すべてのタスクを管理しよう</h3>
+      </div>
+
+      <div class="welcome-image">
+        <%= image_tag "social-media-5187243_640.png", width: 520 %>
+      </div>
+
+      <div class="actions">
+        <%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+
+    </div>
+
   </div>
 </div>

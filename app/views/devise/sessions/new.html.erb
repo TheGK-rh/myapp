@@ -1,15 +1,16 @@
-<div class="container">
+<div class="container user-new">
   <div class="row">
-    <div class="col-6 user-box">
-      <div class="user-title">
+    <div class="col-5 user-box mt-2">
+      <div class="user-title mt-3">
         <h2>
-          <%= icon('fas', 'lemon', style: "color: yellow;") %>
+          <%= icon('fas', 'fish', style: "color: dodgerblue;") %>
           LemonFishへログイン
         </h2>
       </div>
       <br>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
         <div class="form-group">
           <div class="field">
             <h6><%= f.label :name, "名前：" %></h6>
@@ -28,17 +29,31 @@
             <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワードを入力してください" %>
           </div>
         </div>
+        <br>
         <div class="actions">
-          <%= f.submit "ログイン", class: "btn btn-outline-primary btn-sm" %>
+          <%= f.submit "ログイン", class: "btn btn-outline-primary" %>
         </div>
       <% end %>
-      <br>
-      <div class="actions">
-        <%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post, class: "btn btn-primary" %>
-      </div>
-      <br>
+      <br><br>
 
       <%= render "devise/shared/links" %>
+      <br>
+    </div>
+
+    <div class="col-6 ml-3 mt-2 user-box">
+
+      <div class="welcome-message mt-3">
+        <h3>Lemonfishで<br>すべてのタスクを管理しよう</h3>
+      </div>
+
+      <div class="welcome-image">
+        <%= image_tag "social-media-5187243_640.png", width: 520 %>
+      </div>
+
+      <div class="actions">
+        <%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+      <br>
     </div>
   </div>
 </div>
