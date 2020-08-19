@@ -27,6 +27,10 @@ gem 'carrierwave', '~> 2.1'
 gem 'fog-aws', '3.6.6'
 gem 'i18n'
 gem 'rails-i18n', '5.1'
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
+gem 'kaminari-bootstrap', '~> 3.0', '>= 3.0.1'
+gem 'dotenv', '~> 2.7', '>= 2.7.6'
+gem 'dotenv-rails'
 
 
 group :development, :test do

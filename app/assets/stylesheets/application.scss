@@ -43,14 +43,6 @@ body{
   color: white;
 }
 
-//Notification BellのCSS//
-.notification-bell{
-  position: absolute;
-  padding-left: 10px;
-  padding-top: 10px;
-  color: red;
-}
-
 //タスクCardのCSS//
 .card-index{
   border-top: solid 3px dodgerblue;
@@ -114,8 +106,6 @@ body{
   border-radius: 15px;
 }
 
-//User Profile View PageのCSS//
-
 .user-prof{
   border: solid 1px dodgerblue;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
@@ -128,7 +118,64 @@ body{
   font-family: "Osaka-Mono";
 }
 
+.profile{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+}
+
+.user-search{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+}
+
+.follow-show{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;
+}
+
 //tag index pageのCSS//
 .tag-index{
   font-family: "arial unicode ms";
+}
+
+.everytag{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+}
+
+//Activity ShowのCSS//
+.activity-list{
+  border: solid 1px #DDDDDD;
+  border-radius: 30px;
+  background: #FFFF99;
+}
+
+//Notification ShowのCSS//
+.notification-list{
+  border: solid 1px #DDDDDD;
+  border-radius: 30px;
+  background: #FFFF99;
+}
+
+//Notification BellのCSS//
+.notification-bell{
+  position: absolute;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: red;
 }

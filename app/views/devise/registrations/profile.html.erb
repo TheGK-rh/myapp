@@ -1,9 +1,8 @@
 <div class="container mt-5">
   <div class="row">
-
-    <div class="col-12">
+    <div class="col-12 profile">
       <div class="card-body">
-        <h5 class="card-title"><%= @user.name %></h5>
+        <h5 class="card-title"><%= icon('fas', 'fish', style:"color: dodgerblue;") %>&nbsp;<%= @user.name %></h5>
         <p class="card-text">
           <%= render 'devise/shared/stats' %>
           <%= render 'devise/shared/follow_form' if user_signed_in? %>
@@ -12,15 +11,17 @@
           <% if @user.id == current_user.id %>
             <%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-primary btn-sm" %>
             <%= link_to "タスク一覧", root_path, class: "btn btn-primary btn-sm" %>
-          <% else %>
-            <%= link_to "マイページ", profile_path(current_user.id), class: "btn btn-primary btn-sm" %>
           <% end %>
         <% end %>
       </div>
+    </div>
+  </div>
 
       <br><br>
 
-      <form class="form-inline my-2 my-lg-0">
+  <div class="row">
+    <div class="col-12 user-search">
+      <form class="form-inline my-2 my-lg-0 pt-4">
         <%= form_tag(profile_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
           <%= text_field_tag :search, "", class: "form-control mr-sm-2", prompt:{}, placeholder: "ユーザー名orメールアドレス" %>
           <%= submit_tag 'Search', name: nil, class: "btn btn-outline-primary my-2 my-sm-0" %>
@@ -51,7 +52,7 @@
           <% end %>
         <% end %>
       </table>
+      <%= paginate @users %>
     </div>
-
   </div>
 </div>

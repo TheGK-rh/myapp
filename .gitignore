@@ -34,3 +34,5 @@
 
 /spec/.DS_Store
 /spec/fixtures/.DS_Store
+
+/.env
