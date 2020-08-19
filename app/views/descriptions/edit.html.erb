@@ -1,12 +1,20 @@
-<%= form_with(model: [@task, @description] ) do |f| %>
-  <div class="modal-body">
-    <div class="form-group">
-      <h5><%= f.label :description, "タスク詳細" %></h5>
-      <%= f.text_area :description, class: "form-control" %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12 task-edit">
+      <h5><%= icon('fas', 'lemon', style: "color: yellow;") %>&nbsp;タスク詳細編集</h5>
+      <br>
+      <%= form_with(model: [@task, @description] ) do |f| %>
+        <div class="modal-body">
+          <div class="form-group">
+            <h6><%= f.label :description, "タスク詳細：" %></h6>
+            <%= f.text_area :description, class: "form-control", size: "30x15" %>
+          </div>
+        </div>
+        <div class="modal-footer btn-group">
+          <%= f.submit "編集", class: "btn btn-primary" %>
+          <%= link_to "戻る", task_path(@task), class: "btn btn-danger" %>
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class="modal-footer btn-group">
-    <%= f.submit "編集", class: "btn btn-primary btn-sm" %>
-    <%= link_to "戻る", task_path(@task), class: "btn btn-danger btn-sm" %>
-  </div>
-<% end %>
+</div>

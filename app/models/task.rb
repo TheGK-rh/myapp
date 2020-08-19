@@ -16,7 +16,7 @@ class Task < ApplicationRecord
   has_many :task_shares, through: :shares, source: :user
 
   #Validation
-  validates :title, presence: true, length: { maximum: 20 }
+  validates :title, presence: true, length: { maximum: 50 }
   validates :category_id, presence: true
 
   #検索機能

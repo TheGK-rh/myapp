@@ -6,9 +6,12 @@
           <ins style="font-size: 14px;"><%= subtask.name %></ins>&nbsp;&nbsp;
           <%= link_to complete_task_subtask_path(subtask.task, subtask), method: :patch do %>
             <%= icon('fas', 'flag-checkered') %>
-          <% end %>/
-          <%= link_to task_subtask_path(subtask.task, subtask), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
-            <%= icon('fas', 'trash-alt') %>
+          <% end %>
+          <% if subtask.user_id == current_user.id %>
+            /
+            <%= link_to task_subtask_path(subtask.task, subtask), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
+              <%= icon('fas', 'trash-alt') %>
+            <% end %>
           <% end %>
         </li>
       </ul>
@@ -18,10 +21,13 @@
           <del style="font-size: 14px;"><%= subtask.name %></del>&nbsp;&nbsp;
           <%= link_to purge_task_subtask_path(subtask.task, subtask), method: :patch do %>
             <%= icon('fas', 'history') %>
-          <% end %>/
-          <%= link_to task_subtask_path(subtask.task, subtask), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
-            <%= icon('fas', 'trash-alt') %>
           <% end %>
+          <% if subtask.user_id == current_user.id %>
+            /
+            <%= link_to task_subtask_path(subtask.task, subtask), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
+              <%= icon('fas', 'trash-alt') %>
+            <% end %>
+          <% end %>  
         </li>
       </ul>
     <% end %>

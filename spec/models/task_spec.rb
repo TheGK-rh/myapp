@@ -30,12 +30,12 @@ RSpec.describe Task, type: :model do
   end
 
   describe '文字数の検証' do
-    it 'タスクタイトルは20文字以内の場合、有効' do
-      task.title = 't' * 20
+    it 'タスクタイトルは50文字以内の場合、有効' do
+      task.title = 't' * 50
       expect(task).to be_valid
     end
-    it 'タスクタイトルは20文字以上の場合、無効' do
-      task.title = 't' * 21
+    it 'タスクタイトルは50文字以上の場合、無効' do
+      task.title = 't' * 51
       expect(task).to_not be_valid
     end
   end

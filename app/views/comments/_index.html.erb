@@ -2,9 +2,13 @@
   <div class="card" id="comment-<%= comment.id %>">
     <div class="card-body">
       <%= comment.user.name %>：&emsp;
-      <%= comment.body %>　　
-      <%= link_to task_comment_path(comment.task, comment), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
-        <%= icon('fas', 'trash-alt') %>
+      <%= comment.body %>
+      <% if user_signed_in? %>
+        <% if comment.user_id == current_user.id %>　　
+          <%= link_to task_comment_path(comment.task, comment), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, class: "destroy" do %>
+            <%= icon('fas', 'trash-alt') %>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>
