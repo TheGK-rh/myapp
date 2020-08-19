@@ -15,5 +15,8 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1' #東京
     }
     config.fog_directory = 'lemonfish'
+    config.fog_public = false
+    config.storage :fog
+    config.fog_provider = 'fog/aws'
   end
 end
