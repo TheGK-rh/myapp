@@ -151,7 +151,7 @@ body{
   background: #93c9ff;
 }
 
-//tag index pageのCSS//
+//タグ index pageのCSS//
 .tag-index{
   font-family: "arial unicode ms";
 }
@@ -160,6 +160,14 @@ body{
   border: solid 1px #DDDDDD;
   border-radius: 10px;
   background: #FFFF99;
+}
+
+.tag-form{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 //Activity ShowのCSS//
