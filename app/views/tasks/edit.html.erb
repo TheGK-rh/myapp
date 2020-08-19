@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-8 task-edit">
-      <h5>タスク編集</h5>
+      <h5><%= icon('fas', 'lemon', style: "color: yellow;") %>&nbsp;タスク編集</h5>
       <br>
       <%= form_for @task, remote: true do |f| %>
         <h6><%= f.label :title, "・タイトル" %></h6>
@@ -21,8 +21,10 @@
           <%= collection_select(:task, :task_share_ids, @members, :id, :name, {prompt: "フォロワーとタスクを共有する"}, { multiple: true, size: 2, class: "form-control" }) %>
         <% end %>
         <br>
-        <%= f.submit "編集する", class: "btn btn-primary" %>
-        <%= link_to "戻る", task_path(@task), class: "btn btn-danger" %>
+        <div class="modal-footer btn-group">
+          <%= f.submit "編集する", class: "btn btn-primary" %>
+          <%= link_to "戻る", task_path(@task), class: "btn btn-danger" %>
+        </div>
       <% end %>
     </div>
   </div>

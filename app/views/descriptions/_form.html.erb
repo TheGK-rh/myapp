@@ -15,12 +15,12 @@
         <div class="modal-body">
           <div class="form-group">
             <%= f.label :description, "タスク詳細" %>
-            <%= f.text_area :description, class: "form-control" %>
+            <%= f.text_area :description, class: "form-control", size: "10x15" %>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-          <%= f.submit "Create", class: "btn btn-primary" %>
+          <%= f.submit "作成", class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
