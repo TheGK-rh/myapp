@@ -28,6 +28,7 @@
 
 /.DS_Store
 /app/.DS_Store
+/app/assets/.DS_Store
 /public/.DS_Store
 
 /db/migrate/20200812010542_notifications.rb

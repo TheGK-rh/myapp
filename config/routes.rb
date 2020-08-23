@@ -41,9 +41,9 @@ Rails.application.routes.draw do
     end
   end
 
-  #Team機能
-  #resources :teams
-
+  #welcome page(on working)
+  get 'homes/index'
+  #Home page
   root "tasks#index"
 
 end
