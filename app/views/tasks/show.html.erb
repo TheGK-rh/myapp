@@ -3,7 +3,18 @@
     <div class="container task-cont mt-3 mb-3">
 
       <%# タスクタイトル/カテゴリー %>
-      <h2><u><%= icon('fas', 'fish', style: "color: dodgerblue;") %>　<%= @task.title %></u></h2>
+      <h2>
+        &nbsp;<img src="https://img.icons8.com/offices/40/000000/whole-fish.png"/>&nbsp;<u><%= @task.title %></u>
+        <%# ボタン：編集・削除 %>
+        <% if @task.user_id == current_user.id %>
+          <%= link_to edit_task_path(@task) do %>
+            &nbsp;<img src="https://img.icons8.com/ios/30/000000/edit-property.png"/>
+          <% end %>
+          <%= link_to task_path(@task), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" } do %>
+            <img src="https://img.icons8.com/ios/30/000000/delete-trash.png"/>
+          <% end %>
+        <% end %>
+      </h2>
       <br>
       <h5><span class="badge badge-pill badge-primary"><%= @task.category.name %></span></h5>
       <br>
@@ -111,18 +122,6 @@
         <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>
       </div>
       <br>
-
-      <%# ボタン：編集・削除 %>
-      <% if @task.user_id == current_user.id %>
-        <p style="text-align: right; font-size:18px;">
-          <%= link_to edit_task_path(@task) do %>
-            <%= icon('fas', 'edit') %>編集/
-          <% end %>
-          <%= link_to task_path(@task), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" } do %>
-            <%= icon('fas', 'trash-alt') %>削除
-          <% end %>
-        </p>
-      <% end %>
 
     </div>
 

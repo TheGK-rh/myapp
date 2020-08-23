@@ -1,6 +1,6 @@
 <div class="container mt-5">
 
-  <h4 class="mb-3"><%= icon('fas', 'bell', style:"color: dodgerblue;") %>&nbsp;通知</h4>
+  <h5 class="mb-3"><%= icon('fas', 'bell', style:"color: dodgerblue;") %>&nbsp;通知</h5>
 
   <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
   <% if notifications.exists? %>
