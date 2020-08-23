@@ -6,7 +6,13 @@ class CommentsController < ApplicationController
   def create
     @comment = @task.comments.build(comment_params)
     @comment.user_id = current_user.id
-    @comment.save
+    if @comment.save
+      @task.create_notification_comment!(current_user, @comment.id)
+      respond_to do |format|
+        format.html { redirect_to @task }
+        format.js
+      end
+    end
     @comments = @task.comments
   end
 
