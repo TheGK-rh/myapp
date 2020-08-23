@@ -10,7 +10,7 @@
           さんをフォローしました
         <% when 'comment' then %>
           <% if activity.task.user_id == visitor.id %>
-            <%= link_to "あなたのタスク", activity.task %>
+            <%= link_to activity.task.title, activity.task %>
           <% else %>
             <%= activity.task.user.name %>さんのタスク
           <% end %>

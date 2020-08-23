@@ -58,18 +58,18 @@
       </div>
 
       <%# ボタン：　ヘルプ%>
-      <div class="help" style="color: dodgerblue;">
+      <div class="help">
         <p>
           <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             <%= icon('fas', 'question-circle') %>&nbsp;Help
           </button>
         </p>
         <div class="collapse" id="collapseExample">
-          <div class="card card-body">
-            <h6><li><%= icon('fas', 'edit') %>：編集</li></h6>
-            <h6><li><%= icon('fas', 'trash-alt') %>：削除</li></h6>
-            <h6><li><%= icon('fas', 'arrow-alt-circle-right') %>：ステータス変更</li></h6>
-            <h6><li><%= icon('fas', 'arrow-alt-circle-left') %>：ステータス変更</li></h6>
+          <div class="card card-body card-help">
+            <h6><li><%= icon('fas', 'edit', style:"color: dodgerblue;") %>：編集</li></h6>
+            <h6><li><%= icon('fas', 'trash-alt', style:"color: dodgerblue;") %>：削除</li></h6>
+            <h6><li><%= icon('fas', 'arrow-alt-circle-right', style:"color: dodgerblue;") %>：ステータス変更</li></h6>
+            <h6><li><%= icon('fas', 'arrow-alt-circle-left', style:"color: dodgerblue;") %>：ステータス変更</li></h6>
           </div>
         </div>
       </div>

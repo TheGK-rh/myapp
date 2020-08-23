@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 profile">
       <div class="card-body">
-        <h5 class="card-title"><%= icon('fas', 'fish', style:"color: dodgerblue;") %>&nbsp;<%= @user.name %></h5>
+        <h5 class="card-title"><img src="https://img.icons8.com/nolan/64/user-group-man-man.png"/>&nbsp;<%= @user.name %></h5>
         <p class="card-text">
           <%= render 'devise/shared/stats' %>
           <%= render 'devise/shared/follow_form' if user_signed_in? %>
@@ -13,6 +13,7 @@
             <%= link_to "タスク一覧", root_path, class: "btn btn-primary btn-sm" %>
           <% end %>
         <% end %>
+        <p class="mt-1 mb-0"><a href="https://icons8.com/icon/43670/user-account" target="_blank">User Account icon by Icons8</a></p>
       </div>
     </div>
   </div>
