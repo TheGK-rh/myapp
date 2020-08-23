@@ -45,7 +45,8 @@
 
       <%# ボタン：　通知 %>
       <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary link-mypage" >
+        <h6><button type="button" class="btn btn-outline-primary link-mypage">
+          <%# 未確認の通知がある場合、アイコン表示を変える %>
           <% if unchecked_notifications.any? %>
             <%= icon('fas', 'circle', style: "font-size: 2px;", class: "notification-bell") %>
             <%= icon('fas', 'bell') %>
