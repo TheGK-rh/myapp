@@ -1,13 +1,19 @@
 <div class="container mt-5">
+
   <div class="row">
-    <div class="col-6 follow-show pt-3">
-      <h5 class="mb-3">
-        <%= icon('fas', 'fish', style:"color: dodgerblue;") %>&nbsp;
-        <%= @user.name %>さんの<%= @title %>
-      </h5>
+    <div class="col-12 follow-show pt-3">
+      <div class="mb-3">
+        <h5 class="card-title"><img src="https://img.icons8.com/nolan/64/user-group-man-man.png"/>&nbsp;<%= @user.name %>さんの<%= @title %></h5>
+        <%= link_to "マイページへ戻る", profile_path(current_user.id), class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 follow-member">
       <% if @users.any? %>
-        <table class="table">
-          <thead style="background: dodgerblue; color: white;">
+        <table class="table mt-3">
+          <thead style="color: dodgerblue;">
             <tr>
               <th scope="col">ID：</th>
               <th scope="col">ユーザーネーム：</th>
@@ -16,17 +22,19 @@
             </tr>
           </thead>
           <% @users.each do |user| %>
-          <tbody>
-            <tr>
-              <th scope="row"><%= user.id %></th>
-              <td><%= link_to user.name, profile_path(user) %></td>
-              <td><%= user.followings.count %></td>
-              <td><%= user.followers.count %></td>
-            </tr>
-          </tbody>
+            <tbody>
+              <tr>
+                <th scope="row"><%= user.id %></th>
+                <td style="font-weight:bold;"><%= link_to user.name, profile_path(user) %></td>
+                <td><%= user.followings.count %></td>
+                <td><%= user.followers.count %></td>
+              </tr>
+            </tbody>
+          <% end %>
         <% end %>
-      <% end %>
+      </table>
       <%= paginate @users %>
     </div>
   </div>
+
 </div>

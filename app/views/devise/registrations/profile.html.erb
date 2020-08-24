@@ -9,8 +9,8 @@
         </p>
         <% if user_signed_in? %>
           <% if @user.id == current_user.id %>
-            <%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-primary btn-sm" %>
-            <%= link_to "タスク一覧", root_path, class: "btn btn-primary btn-sm" %>
+            <%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-outline-primary btn-sm" %>
+            <%= link_to "タスク一覧へ", root_path, class: "btn btn-outline-primary btn-sm" %>
           <% end %>
         <% end %>
         <p class="mt-1 mb-0"><a href="https://icons8.com/icon/43670/user-account" target="_blank">User Account icon by Icons8</a></p>
@@ -24,13 +24,13 @@
     <div class="col-12 user-search">
       <form class="form-inline my-2 my-lg-0 pt-4">
         <%= form_tag(profile_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
-          <%= text_field_tag :search, "", class: "form-control mr-sm-2", prompt:{}, placeholder: "ユーザー名orメールアドレス" %>
-          <%= submit_tag 'Search', name: nil, class: "btn btn-outline-primary my-2 my-sm-0" %>
+          <%= text_field_tag :search, "", class: "form-control mr-sm-2", prompt:{}, placeholder: "@ユーザー名" %>
+          <%= submit_tag '検索', name: nil, class: "btn btn-outline-primary my-2 my-sm-0" %>
         <% end %>
       </form>
       <br>
       <table class="table">
-        <thead style="background: dodgerblue; color: white;">
+        <thead style="color: dodgerblue;">
           <tr>
             <th scope="col">ID：</th>
             <th scope="col">ユーザーネーム：</th>
@@ -44,7 +44,7 @@
               <tbody>
                 <tr>
                   <th scope="row"><%= user.id %></th>
-                  <td><%= link_to user.name, profile_path(user) %></td>
+                  <td style="font-weight:bold;"><%= link_to user.name, profile_path(user) %></td>
                   <td><%= user.followings.count %></td>
                   <td><%= user.followers.count %></td>
                 </tr>
