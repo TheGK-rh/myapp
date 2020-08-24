@@ -37,6 +37,8 @@
                 <%= link_to "タスク一覧/作成", root_path, class: "dropdown-item" %>
                 <%= link_to "タグ一覧/作成", tags_path, class: "dropdown-item" %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                <%= link_to "アクティビティログ", activities_path , class: "dropdown-item" %>
+                <%= link_to "通知", notifications_path, class: "dropdown-item"  %>
               <% else %>
                 <%= link_to "ログイン", new_user_session_path, class: "dropdown-item" %>
                 <%= link_to "アカウント作成", new_user_registration_path, class: "dropdown-item" %>
@@ -66,7 +68,7 @@
       <%= yield %>
     </div>
 
-  </div>  
+  </div>
 
   <footer>
     <div class="container-fluid">

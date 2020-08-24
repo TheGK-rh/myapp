@@ -28,6 +28,9 @@ body{
 .footer{
   margin-top: auto;
 }
+.task-menu-small{
+  display: none;
+}
 
 //flash messageのCSS//
 .notice{
@@ -261,6 +264,15 @@ body{
   }
 }
 @media (max-width: 600px){
+  .task-menu-small{
+    display: inline;
+  }
+  .task-index-menu{
+    display: none
+  }
+  .task-collapse-menu{
+    background: #FFFF99;
+  }
   .task-all{
     margin-top: 5px;
   }
