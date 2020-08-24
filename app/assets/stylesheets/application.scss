@@ -20,6 +20,14 @@ body{
   font-family: monospace;
   background-color: yellow;
 }
+#main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.footer{
+  margin-top: auto;
+}
 
 //flash messageのCSS//
 .notice{
@@ -50,6 +58,9 @@ body{
 }
 
 //タスクCardのCSS//
+.task-all{
+  margin-top: 50px;
+}
 .card-index{
   border-top: solid 3px dodgerblue;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
@@ -109,11 +120,26 @@ body{
   font-weight: bold;
 }
 
-.user-box{
-  background: rgba(248, 248, 248, 1);
+.user-box1{
+  background: #FFFF99;
   padding-top: 15px;
   padding-bottom: 10px;
   border: solid 1px #CCCCCC;
+}
+.user-box2{
+  background: #FFFF99;
+  margin-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  border: solid 1px #CCCCCC;
+}
+.container-fluid{
+  margin-top: 20px;
+  background: dodgerblue;
+  text-align: center;
+}
+.allrights{
+  margin-top: 20px;
 }
 
 .user-prof{
@@ -144,6 +170,12 @@ body{
   border: solid 1px #DDDDDD;
   border-radius: 10px;
   background: #FFFF99;
+}
+.welcome-img{
+  height: 300px;
+  width: 520px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 /*ページネーション自体のデザイン*/
@@ -196,4 +228,80 @@ body{
   padding-left: 10px;
   padding-top: 10px;
   color: red;
+}
+
+//レスポンシブ設定
+@media (max-width: 1124px){
+  .user-box1{
+    background: #FFFF99;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border: solid 1px #CCCCCC;
+  }
+  .user-box2{
+    background: #FFFF99;
+    margin-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border: solid 1px #CCCCCC;
+  }
+  .welcome-img{
+    height: 300px;
+    width: 420px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .container-fluid{
+    margin-top: 20px;
+    background: dodgerblue;
+    text-align: center;
+  }
+  .allrights{
+    margin-top: 20px;
+  }
+}
+@media (max-width: 600px){
+  .task-all{
+    margin-top: 5px;
+  }
+  .todolist{
+    margin-top: 15px
+  }
+  .onworking{
+    margin-top: 15px
+  }
+  .completed{
+    margin-top: 15px
+  }
+  .user-new{
+    margin-top: 30px;
+    margin-left: 7px;
+  }
+  .user-box1{
+    background: #FFFF99;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border: solid 1px #CCCCCC;
+  }
+  .user-box2{
+    background: #FFFF99;
+    margin-left: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border: solid 1px #CCCCCC;
+  }
+  .welcome-img{
+    height: 230px;
+    width: 450px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .container-fluid{
+    margin-top: 20px;
+    background: dodgerblue;
+    text-align: center;
+  }
+  .allrights{
+    margin-top: 20px;
+  }
 }
