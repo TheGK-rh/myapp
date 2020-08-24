@@ -28,6 +28,9 @@ body{
 .footer{
   margin-top: auto;
 }
+.task-menu-small{
+  display: none;
+}
 
 //flash messageのCSS//
 .notice{
@@ -165,11 +168,16 @@ body{
   border-radius: 10px;
   background: #FFFF99;
 }
-
 .follow-show{
   border: solid 1px #DDDDDD;
   border-radius: 10px;
   background: #FFFF99;
+}
+.follow-member{
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  background: #FFFF99;
+  margin-top: 30px;
 }
 .welcome-img{
   height: 300px;
@@ -261,6 +269,15 @@ body{
   }
 }
 @media (max-width: 600px){
+  .task-menu-small{
+    display: inline;
+  }
+  .task-index-menu{
+    display: none
+  }
+  .task-collapse-menu{
+    background: #FFFF99;
+  }
   .task-all{
     margin-top: 5px;
   }

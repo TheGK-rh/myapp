@@ -18,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def followers
-    @title = "フォロワーユーザー"
+    @title = "フォロワー"
     @user  = User.find(params[:id])
     @users = @user.followers.page(params[:page]).per(10)
     render 'show_follow'

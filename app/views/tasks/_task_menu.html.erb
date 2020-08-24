@@ -1,0 +1,40 @@
+<p>
+  <button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <%= icon('fas', 'chevron-circle-down') %>&nbsp;Menu
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body task-collapse-menu">
+    <%# ボタン：　プロフィールへ %>
+    <div class="mb-3 mt-3">
+      <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'user') %>&nbsp;<%= link_to current_user.name, profile_path(current_user.id) %></button></h6>
+    </div>
+
+    <%# 検索フォーム %>
+    <form class="form-inline my-2 my-lg-0">
+      <%= form_tag(tasks_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
+        <%= text_field_tag :search, "", class: "form-control mr-sm-2", prompt:{}, placeholder: "タスク名" %><br>
+        <p class="mt-3">
+          <%= button_tag  type: "submit", title: nil, class: "btn btn-outline-primary " do %>
+            <%= icon('fas', 'search') %>検索
+          <% end %>
+        </p>
+      <% end %>
+    </form>
+
+    <%# ボタン：　タスク作成 %>
+    <div>
+      <%= render 'form' %>
+    </div>
+
+    <%# ボタン：　タグ作成 %>
+    <div class="mb-3 mt-3">
+      <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'tags') %>&nbsp;<%= link_to "タグ作成", tags_path %></button></h6>
+    </div>
+
+    <%# ボタン：　ログアウト %>
+    <% if user_signed_in? %>
+      <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'sign-out-alt') %>&nbsp;<%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button></h6>
+    <% end %>
+  </div>
+</div>
