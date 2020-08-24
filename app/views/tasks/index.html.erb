@@ -4,8 +4,8 @@
     <%= render 'error' %>
   </div>
 
-  <div class="row mt-5">
-    <div class=" task-index-menu col-3">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 task-all">
+    <div class=" task-index-menu col">
       <%# ボタン：　プロフィールへ %>
       <div class="mb-3 mt-3">
         <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'user') %>&nbsp;<%= link_to current_user.name, profile_path(current_user.id) %></button></h6>
@@ -57,6 +57,11 @@
         </button></h6>
       </div>
 
+      <%# ボタン：　ログアウト %>
+      <% if user_signed_in? %>
+        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'sign-out-alt') %>&nbsp;<%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button></h6>
+      <% end %>
+
       <%# ボタン：　ヘルプ%>
       <div class="help">
         <p>
@@ -76,13 +81,13 @@
     </div>
 
     <%# タスク一覧：各ステータスごとに%>
-    <div class="col-3 todolist">
+    <div class="col todolist">
       <%= render 'todolist', tasks: @tasks %>
     </div>
-    <div class="col-3 onworking">
+    <div class="col onworking">
       <%= render 'onworking', tasks: @tasks %>
     </div>
-    <div class="col-3 completed">
+    <div class="col completed">
       <%= render 'completed', tasks: @tasks %>
     </div>
   </div>
