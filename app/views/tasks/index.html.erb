@@ -6,11 +6,7 @@
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 task-all">
 
-    <div class="task-menu-small col">
-      <%= render 'task_menu' %>
-    </div>
-
-    <div class=" task-index-menu col">
+    <div class=" task-menu col">
       <%# ボタン：　プロフィールへ %>
       <div class="mb-3 mt-3">
         <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'user') %>&nbsp;<%= link_to current_user.name, profile_path(current_user.id) %></button></h6>
@@ -33,53 +29,55 @@
         <%= render 'form' %>
       </div>
 
-      <%# ボタン：　タグ作成 %>
-      <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'tags') %>&nbsp;<%= link_to "タグ作成", tags_path %></button></h6>
-      </div>
+      <div class="task-index-menu">
+        <%# ボタン：　タグ作成 %>
+        <div class="mb-3 mt-3">
+          <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'tags') %>&nbsp;<%= link_to "タグ作成", tags_path %></button></h6>
+        </div>
 
-      <%# ボタン：　チーム作成 %>
-      <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'project-diagram') %>&nbsp;<%= link_to "チーム作成(準備中)", root_path %></button></h6>
-      </div>
+        <%# ボタン：　チーム作成 %>
+        <div class="mb-3 mt-3">
+          <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'project-diagram') %>&nbsp;<%= link_to "チーム作成(準備中)", root_path %></button></h6>
+        </div>
 
-      <%# ボタン：　アクティビティログ %>
-      <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'chart-line') %>&nbsp;<%= link_to "アクティビティログ", activities_path %></button></h6>
-      </div>
+        <%# ボタン：　アクティビティログ %>
+        <div class="mb-3 mt-3">
+          <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'chart-line') %>&nbsp;<%= link_to "アクティビティログ", activities_path %></button></h6>
+        </div>
 
-      <%# ボタン：　通知 %>
-      <div class="mb-3 mt-3">
-        <h6><button type="button" class="btn btn-outline-primary link-mypage">
-          <%# 未確認の通知がある場合、アイコン表示を変える %>
-          <% if unchecked_notifications.any? %>
-            <%= icon('fas', 'circle', style: "font-size: 2px;", class: "notification-bell") %>
-            <%= icon('fas', 'bell') %>
-          <% else %>
-            <%= icon('fas', 'bell') %>
-          <% end %>
-          &nbsp;<%= link_to "通知", notifications_path %>
-        </button></h6>
-      </div>
+        <%# ボタン：　通知 %>
+        <div class="mb-3 mt-3">
+          <h6><button type="button" class="btn btn-outline-primary link-mypage">
+            <%# 未確認の通知がある場合、アイコン表示を変える %>
+            <% if unchecked_notifications.any? %>
+              <%= icon('fas', 'circle', style: "font-size: 2px;", class: "notification-bell") %>
+              <%= icon('fas', 'bell') %>
+            <% else %>
+              <%= icon('fas', 'bell') %>
+            <% end %>
+            &nbsp;<%= link_to "通知", notifications_path %>
+          </button></h6>
+        </div>
 
-      <%# ボタン：　ログアウト %>
-      <% if user_signed_in? %>
-        <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'sign-out-alt') %>&nbsp;<%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button></h6>
-      <% end %>
+        <%# ボタン：　ログアウト %>
+        <% if user_signed_in? %>
+          <h6><button type="button" class="btn btn-outline-primary link-mypage" ><%= icon('fas', 'sign-out-alt') %>&nbsp;<%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button></h6>
+        <% end %>
 
-      <%# ボタン：　ヘルプ%>
-      <div class="help">
-        <p>
-          <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            <%= icon('fas', 'question-circle') %>&nbsp;Help
-          </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body card-help">
-            <h6><li><%= icon('fas', 'edit', style:"color: dodgerblue;") %>：編集</li></h6>
-            <h6><li><%= icon('fas', 'trash-alt', style:"color: dodgerblue;") %>：削除</li></h6>
-            <h6><li><%= icon('fas', 'arrow-alt-circle-right', style:"color: dodgerblue;") %>：ステータス変更</li></h6>
-            <h6><li><%= icon('fas', 'arrow-alt-circle-left', style:"color: dodgerblue;") %>：ステータス変更</li></h6>
+        <%# ボタン：　ヘルプ%>
+        <div class="help">
+          <p>
+            <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <%= icon('fas', 'question-circle') %>&nbsp;Help
+            </button>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body card-help">
+              <h6><li><%= icon('fas', 'edit', style:"color: dodgerblue;") %>：編集</li></h6>
+              <h6><li><%= icon('fas', 'trash-alt', style:"color: dodgerblue;") %>：削除</li></h6>
+              <h6><li><%= icon('fas', 'arrow-alt-circle-right', style:"color: dodgerblue;") %>：ステータス変更</li></h6>
+              <h6><li><%= icon('fas', 'arrow-alt-circle-left', style:"color: dodgerblue;") %>：ステータス変更</li></h6>
+            </div>
           </div>
         </div>
       </div>
