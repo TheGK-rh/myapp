@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :find_tag, only: [:edit, :update, :destroy, :complete, :purge]
 
   def index
