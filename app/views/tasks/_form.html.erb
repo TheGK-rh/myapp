@@ -5,28 +5,39 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <img src="https://img.icons8.com/offices/30/000000/whole-fish.png"/>&nbsp;タスク作成
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <%= form_for @task, remote: true do |f| %>
         <%# 入力フォーム %>
         <div class="modal-body">
           <div class="form-group">
-            <h5><%= f.label :title, "タイトル" %></h5>
-            <%= f.text_area :title, class: "form-control" %>
+            <h6><%= f.label :title, "タイトル：" %></h6>
+            <%= f.text_field :title, class: "form-control" %>
             <br>
+            <h6><%= f.label :category_id, "カテゴリー：" %></h6>
             <%= collection_select(:task, :category_id, Category.all, :id, :name, {prompt: "カテゴリを選択してください(必須)"}, {class: "form-control"} )%>
             <br>
             <% if @tags.any? %>
+              <h6><%= f.label :tag_ids, "タグ：" %></h6>
               <%= collection_select(:task, :tag_ids, @tags, :id, :name, {prompt: "タグを選択してください(複数選択可)"}, { multiple: true, size: 2, class: "form-control" }) %>
             <% end %>
             <br>
+            <h6><%= f.label :term, "期日：" %></h6>
             <%= f.date_field :term, class: "form-control" %>
             <br>
             <% if @members.any? %>
+              <h6><%= f.label :title, "共有：" %></h6>
               <%= collection_select(:task, :task_share_ids, @members, :id, :name, {prompt: "フォロワーとタスクを共有する"}, { multiple: true, size: 2, class: "form-control" }) %>
             <% end %>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
           <%= f.submit "作成する", class: "btn btn-primary" %>
         </div>
       <% end %>
