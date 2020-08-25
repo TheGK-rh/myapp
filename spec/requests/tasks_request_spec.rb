@@ -1,7 +1,11 @@
+#http_status = 200 : ok リクエストが成功したことを示す。
+#http_status = 302 : found リクエストされたリソースのURLが一時的に変更されたことを示す。
+
 require 'rails_helper'
 
 RSpec.describe "Tasks", type: :request do
   let(:user) { create(:user) }
+  let(:base_title) { 'LemonFish' }
 
   describe 'GET /' do
     context 'ログインしていない' do
@@ -15,6 +19,7 @@ RSpec.describe "Tasks", type: :request do
         sign_in user
         get root_path
         expect(response).to have_http_status 200
+        expect(response.body).to match(/<title>#{base_title}<\/title>/i)
       end
     end
   end
