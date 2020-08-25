@@ -1,3 +1,6 @@
+#http_status = 200 : ok リクエストが成功したことを示す。
+#http_status = 302 : found リクエストされたリソースのURLが一時的に変更されたことを示す。
+
 require 'rails_helper'
 
 RSpec.describe "Activities", type: :request do
