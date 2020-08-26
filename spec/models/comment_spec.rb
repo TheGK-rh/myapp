@@ -37,7 +37,7 @@ RSpec.describe Comment, type: :model do
       end
     end
 
-    context '文字数が120文字以上' do
+    context '文字数が300文字以上' do
       it '登録できない' do
         expect(build(:comment, body: "a" * 301)).to_not be_valid
       end
