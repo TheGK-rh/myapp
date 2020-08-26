@@ -1,4 +1,23 @@
 ja:
+  # ログインページ(users/sessions/new.html.erb)
+  LemonFishへログイン: LemonFishへログイン
+  #layouts/application.html.erb
+  mypage: マイページ
+  tasks: タスク一覧/作成
+  tags: タグ一覧/作成
+  activitylog: アクティビティログ
+  notification: 通知
+  logout: ログアウト
+  login: ログイン
+  createaccount: アカウント作成
+  #activities/index.html.erb
+  no_activitylog: アクティビティはありません
+  #activities/_activity.html.erb
+  activity_follow: さんをフォローしました
+  activity_comment: にコメントしました
+  whos_task: さんのタスク
+
+  #ActiveRecordの辞書
   activerecord:
     attributes:
       task:

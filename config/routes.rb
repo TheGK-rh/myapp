@@ -41,7 +41,6 @@ Rails.application.routes.draw do
         end
       end
     end
-    get '/:locale' => 'static_pages#home'
     #Home page
     root "tasks#index"
   end

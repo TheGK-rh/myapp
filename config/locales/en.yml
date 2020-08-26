@@ -30,4 +30,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  # ログインページ(users/sessions/new.html.erb)
+  LemonFishへログイン: Login to LemonFish
+  #layouts/application.html.erb
+  mypage: MyPage
+  tasks: TasksPage
+  tags: TagsPage
+  activitylog: ActivityLog
+  notification: Notification
+  logout: Logout
+  login: Login
+  createaccount: Create an Account
+  #activities/index.html.erb
+  no_activitylog: There is no Activity
+  #activities/_activity.html.erb
+  activity_follow: Following!!
+  activity_comment: Commented!!
+  whos_task: 's Task
