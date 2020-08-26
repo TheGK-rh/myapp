@@ -6,6 +6,8 @@
     <% @activities.each do |activity| %>
       <%= render 'activities/activity', activity: activity %>
     <% end %>
+    <br>
+    <%= paginate @activities %>
   <% else %>
   <div class="card" style="width: 30rem; font-size: 16px;">
     <ul class="list-group list-group-flush">
