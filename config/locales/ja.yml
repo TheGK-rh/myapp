@@ -38,6 +38,25 @@ ja:
   #Tags/_form.html.erb
   tags_form_create: 作成
   tags_form_label: 新しいタグを作成
+  #Activity/index.html.erb
+  activities_activity: アクティビティログ
+  activities_no_activity: アクティビティはありません
+  #Activity/_activity.html.erb
+  activities_ja_follow: さんをフォローしました
+  activities_ja_comment: にコメントしました
+  activities_en_follow: ""
+  activities_en_comment: ""
+  activities_task: さんのタスク
+  #Notification/index.html.erb
+  notifications_notification: 通知
+  notifications_no_notification: 通知はありません
+  #Notification/_notification.html.erb
+  notifications_follow: あなたをフォローしました
+  notifications_yourtask: あなたのタスク
+  notifications_ja_comment: にコメントしました。
+  notifications_en_comment: ""
+  notifications_whosetask: さんのタスク
+  notifications_who: さんが
 
   #ActiveRecordの辞書
   activerecord:
