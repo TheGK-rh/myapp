@@ -57,6 +57,24 @@ ja:
   notifications_en_comment: ""
   notifications_whosetask: さんのタスク
   notifications_who: さんが
+  #Devise/Registration/profile.html.erb
+  following_title: フォローユーザー
+  follower_title: フォロワー
+  profile_whose: さんの
+  profile_account_edit: アカウント編集
+  profile_tasks_list: タスク一覧へ
+  profile_search_placeholder: ユーザー名
+  profile_search: 検索
+  profile_table_username: ユーザーネーム
+  profile_table_follow: フォロー
+  profile_table_follower: フォロワー
+  profile_backto_mypage: マイページへ戻る
+  #Devise/Registration/_stats.html.erb
+  profile_stats_follow: フォロー
+  profile_stats_follower: フォロワー
+  #Devise/Registration/_follow.html.erb
+  profile_follow_button: フォローする
+  profile_unfollow_button: フォロー中
 
   #ActiveRecordの辞書
   activerecord:

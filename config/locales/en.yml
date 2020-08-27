@@ -88,3 +88,21 @@ en:
   notifications_en_comment: Commented on
   notifications_whosetask: ""
   notifications_who: ""
+  #Devise/Registration/profile.html.erb
+  following_title: Follow User
+  follower_title: Follower
+  profile_whose: ""
+  profile_account_edit: Edit Your Account
+  profile_tasks_list: To Tasks List
+  profile_search_placeholder: UserName
+  profile_search: Search
+  profile_table_username: User Name
+  profile_table_follow: Following
+  profile_table_follower: Follower
+  profile_backto_mypage: Back to MyPage
+  #Devise/Registration/_stats.html.erb
+  profile_stats_follow: Follow
+  profile_stats_follower: Follower
+  #Devise/Registration/_follow.html.erb
+  profile_follow_button: Follow
+  profile_unfollow_button: Followed

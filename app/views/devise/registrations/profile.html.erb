@@ -9,8 +9,8 @@
         </p>
         <% if user_signed_in? %>
           <% if @user.id == current_user.id %>
-            <%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-outline-primary btn-sm" %>
-            <%= link_to "タスク一覧へ", root_path, class: "btn btn-outline-primary btn-sm" %>
+            <%= link_to (t :profile_account_edit), edit_user_registration_path, class: "btn btn-outline-primary btn-sm" %>
+            <%= link_to (t :profile_tasks_list), root_path, class: "btn btn-outline-primary btn-sm" %>
           <% end %>
         <% end %>
         <p class="mt-1 mb-0"><a href="https://icons8.com/icon/43670/user-account" target="_blank">User Account icon by Icons8</a></p>
@@ -24,8 +24,8 @@
     <div class="col-12 user-search">
       <form class="form-inline my-2 my-lg-0 pt-4">
         <%= form_tag(profile_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
-          <%= text_field_tag :search, "", class: "form-control mr-sm-2", prompt:{}, placeholder: "@ユーザー名" %>
-          <%= submit_tag '検索', name: nil, class: "btn btn-outline-primary my-2 my-sm-0" %>
+          <%= text_field_tag :search, "", class: "form-control mr-sm-2", prompt:{}, placeholder: (t :profile_search_placeholder) %>
+          <%= submit_tag (t :profile_search), name: nil, class: "btn btn-outline-primary my-2 my-sm-0" %>
         <% end %>
       </form>
       <br>
@@ -33,9 +33,9 @@
         <thead style="color: dodgerblue;">
           <tr>
             <th scope="col">ID：</th>
-            <th scope="col">ユーザーネーム：</th>
-            <th scope="col">フォロー：</th>
-            <th scope="col">フォロワー：</th>
+            <th scope="col"><%= t :profile_table_username %>：</th>
+            <th scope="col"><%= t :profile_table_follow %>：</th>
+            <th scope="col"><%= t :profile_table_follower %>：</th>
           </tr>
         </thead>
         <% @users.each do |user| %>

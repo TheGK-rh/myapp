@@ -12,14 +12,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def following
-    @title = "フォローユーザー"
+    @title = (t :following_title)
     @user  = User.find(params[:id])
     @users = @user.followings.page(params[:page]).per(10)
     render 'show_follow'
   end
 
   def followers
-    @title = "フォロワー"
+    @title = (t :follower_title)
     @user  = User.find(params[:id])
     @users = @user.followers.page(params[:page]).per(10)
     render 'show_follow'
