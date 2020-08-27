@@ -33,15 +33,15 @@
             <%# メニュードロップダウン %>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="font-family:monospace;">
               <% if user_signed_in? %>
-                <%= link_to "マイページ", profile_path(current_user.id), class: "dropdown-item" %>
-                <%= link_to "タスク一覧/作成", root_path, class: "dropdown-item" %>
-                <%= link_to "タグ一覧/作成", tags_path, class: "dropdown-item" %>
-                <%= link_to "アクティビティログ", activities_path , class: "dropdown-item" %>
-                <%= link_to "通知", notifications_path, class: "dropdown-item" %>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                <%= link_to (t :app_mypage), profile_path(current_user.id), class: "dropdown-item" %>
+                <%= link_to (t :app_tasks), root_path, class: "dropdown-item" %>
+                <%= link_to (t :app_tags), tags_path, class: "dropdown-item" %>
+                <%= link_to (t :app_activitylog), activities_path , class: "dropdown-item" %>
+                <%= link_to (t :notification), notifications_path, class: "dropdown-item" %>
+                <%= link_to (t :app_logout), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% else %>
-                <%= link_to "ログイン", new_user_session_path, class: "dropdown-item" %>
-                <%= link_to "アカウント作成", new_user_registration_path, class: "dropdown-item" %>
+                <%= link_to (t :app_login), new_user_session_path, class: "dropdown-item" %>
+                <%= link_to (t :app_createaccount), new_user_registration_path, class: "dropdown-item" %>
               <% end %>
             </div>
           </li>

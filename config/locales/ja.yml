@@ -1,4 +1,13 @@
 ja:
+  #Application.html.erb
+  app_mypage: マイページ
+  app_tasks: タスク一覧/作成
+  app_tags: タグ一覧/作成
+  app_activitylog: アクティビティログ
+  notification: 通知
+  app_logout: ログアウト
+  app_login: ログイン
+  app_createaccount: アカウント作成
   #Tasks/index.html.erb
   tasks_taskname: タスク名
   tasks_search: 検索

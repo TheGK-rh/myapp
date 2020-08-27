@@ -30,6 +30,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  #Application.html.erb
+  app_mypage: MyPage
+  app_tasks: Tasks
+  app_tags: Tags
+  app_activitylog: Activity Log
+  notification: Notification
+  app_logout: LogOut
+  app_login: LogIn
+  app_createaccount: Create Account
   #Tasks/index.html.erb
   tasks_taskname: Task_Title
   tasks_search: Search
