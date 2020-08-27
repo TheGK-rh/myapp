@@ -30,20 +30,26 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  # ログインページ(users/sessions/new.html.erb)
-  LemonFishへログイン: Login to LemonFish
-  #layouts/application.html.erb
-  mypage: MyPage
-  tasks: TasksPage
-  tags: TagsPage
-  activitylog: ActivityLog
-  notification: Notification
-  logout: Logout
-  login: Login
-  createaccount: Create an Account
-  #activities/index.html.erb
-  no_activitylog: There is no Activity
-  #activities/_activity.html.erb
-  activity_follow: Following!!
-  activity_comment: Commented!!
-  whos_task: 's Task
+  #Tasks/index.html.erb
+  tasks_taskname: Task_Title
+  tasks_search: Search
+  tasks_taskcreate: Create Task
+  tasks_tagcreate: Create Tag
+  tasks_activitylog: Activity Log
+  tasks_notification: Notification
+  tasks_logout: LogOut
+  tasks_help: Help
+  tasks_help_edit: Edit
+  tasks_help_delete: Delete
+  tasks_help_changestatus: Change Status
+  tasks_onworking: OnWorking
+  tasks_completed: Completed
+  tasks_delete_message: Do you want to Delete? Are you Sure?
+  #Tasks/show.html.erb
+  tasks_description: Task Description
+  tasks_subtask: Subtask
+  tasks_tag: Tag
+  tasks_term: Term
+  tasks_file: File
+  tasks_comment: Comment
+  tasks_noshow: You can not get this Task.

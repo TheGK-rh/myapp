@@ -1,21 +1,27 @@
 ja:
-  # ログインページ(users/sessions/new.html.erb)
-  LemonFishへログイン: LemonFishへログイン
-  #layouts/application.html.erb
-  mypage: マイページ
-  tasks: タスク一覧/作成
-  tags: タグ一覧/作成
-  activitylog: アクティビティログ
-  notification: 通知
-  logout: ログアウト
-  login: ログイン
-  createaccount: アカウント作成
-  #activities/index.html.erb
-  no_activitylog: アクティビティはありません
-  #activities/_activity.html.erb
-  activity_follow: さんをフォローしました
-  activity_comment: にコメントしました
-  whos_task: さんのタスク
+  #Tasks/index.html.erb
+  tasks_taskname: タスク名
+  tasks_search: 検索
+  tasks_taskcreate: タスク作成
+  tasks_tagcreate: タグ作成
+  tasks_activitylog: アクティビティログ
+  tasks_notification: 通知
+  tasks_logout: ログアウト
+  tasks_help: ヘルプ
+  tasks_help_edit: 編集
+  tasks_help_delete: 削除
+  tasks_help_changestatus: ステータス変更
+  tasks_onworking: 作業中
+  tasks_completed: 完了
+  tasks_delete_message: 削除します。よろしいですか。
+  #Tasks/show.html.erb
+  tasks_description: タスク詳細
+  tasks_subtask: サブタスク
+  tasks_tag: タグ
+  tasks_term: 期日
+  tasks_file: ファイル
+  tasks_comment: コメント
+  tasks_noshow: 表示できません。
 
   #ActiveRecordの辞書
   activerecord:

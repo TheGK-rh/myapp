@@ -10,7 +10,7 @@
           <%= link_to edit_task_path(@task) do %>
             &nbsp;<img src="https://img.icons8.com/ios/30/000000/edit-property.png"/>
           <% end %>
-          <%= link_to task_path(@task), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" } do %>
+          <%= link_to task_path(@task), method: :delete, remote: true, data: { confirm: (t :tasks_delete_message) } do %>
             <img src="https://img.icons8.com/ios/30/000000/delete-trash.png"/>
           <% end %>
         <% end %>
@@ -42,7 +42,7 @@
       <%# ビュー：　タスク詳細 %>
       <h5>
         <%= render partial: 'descriptions/form', locals: { description: @description, task: @task } %>
-        タスク詳細
+        <%= t :tasks_description %>
       </h5>
       <div id="descriptions_area">
         <%= render partial: 'descriptions/index', locals: { descriptions: @descriptions } %>
@@ -52,7 +52,7 @@
       <%# ビュー：　サブタスク%>
       <h5>
         <%= render partial: 'subtasks/form', locals: { subtask: @subtask, task: @task } %>
-        サブタスク
+        <%= t :tasks_subtask %>
       </h5>
       <div id="subtasks_area">
         <%= render partial: 'subtasks/index', locals: { subtasks: @subtasks } %>
@@ -70,13 +70,14 @@
             <%= icon('fas', 'tags') %>
           <% end %>
         <% end %>
-        タグ
+        <%= t :tasks_tag %>
       </h5>
       <div class="tag-show">
         <% if @task.tags.any? %>
           <%= render @task.tags %>
         <% end %>
       </div>
+      <br>
       <br>
 
       <%# ビュー：　期日 %>
@@ -90,7 +91,7 @@
             <%= icon('fas', 'calendar-alt') %>
           <% end %>
         <% end %>
-        期日
+        <%= t :tasks_term %>
       </h5>
       <div class="term-show">
         <%= @task.term %>
@@ -102,7 +103,7 @@
         <%= link_to task_path(@task), class: "btn btn-link" do %>
           <%= icon('fas', 'file-alt') %>
         <% end %>
-        ファイル
+        <%= t :tasks_file %>
       </h5>
       <%= render partial: 'attachments/index', locals: { attachments: @attachments } %>
       <%= render partial: 'attachments/form', locals: { attachment: @attachment, task: @task } %>
@@ -113,7 +114,7 @@
         <%= link_to task_path(@task), class: "btn btn-link" do %>
           <%= icon('fas', 'comment') %>
         <% end %>
-        コメント
+        <%= t :tasks_comment %>
       </h5>
       <div id="comments_area">
         <%= render partial: 'comments/index', locals: { comments: @comments } %>
@@ -126,6 +127,6 @@
     </div>
 
   <% else %>
-    <h4>表示できません。</h4>
+    <h4><%= t :tasks_noshow %></h4>
   <% end %>
 <% end %>
