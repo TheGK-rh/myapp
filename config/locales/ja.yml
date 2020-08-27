@@ -1,4 +1,82 @@
 ja:
+  #Application.html.erb
+  app_mypage: マイページ
+  app_tasks: タスク一覧/作成
+  app_tags: タグ一覧/作成
+  app_activitylog: アクティビティログ
+  notification: 通知
+  app_logout: ログアウト
+  app_login: ログイン
+  app_createaccount: アカウント作成
+  #Tasks/index.html.erb
+  tasks_taskname: タスク名
+  tasks_search: 検索
+  tasks_taskcreate: タスク作成
+  tasks_tagcreate: タグ作成
+  tasks_activitylog: アクティビティログ
+  tasks_notification: 通知
+  tasks_logout: ログアウト
+  tasks_help: ヘルプ
+  tasks_help_edit: 編集
+  tasks_help_delete: 削除
+  tasks_help_changestatus: ステータス変更
+  tasks_onworking: 作業中
+  tasks_completed: 完了
+  tasks_delete_message: 削除します。よろしいですか。
+  #Tasks/show.html.erb
+  tasks_description: タスク詳細
+  tasks_subtask: サブタスク
+  tasks_tag: タグ
+  tasks_term: 期日
+  tasks_file: ファイル
+  tasks_comment: コメント
+  tasks_noshow: 表示できません。
+  #Tags/index.html.erb
+  tags_tags: タグ一覧
+  tags_other_tags: みんなのタグ
+  tags_delete_message: 削除します。よろしいですか。
+  #Tags/_form.html.erb
+  tags_form_create: 作成
+  tags_form_label: 新しいタグを作成
+  #Activity/index.html.erb
+  activities_activity: アクティビティログ
+  activities_no_activity: アクティビティはありません
+  #Activity/_activity.html.erb
+  activities_ja_follow: さんをフォローしました
+  activities_ja_comment: にコメントしました
+  activities_en_follow: ""
+  activities_en_comment: ""
+  activities_task: さんのタスク
+  #Notification/index.html.erb
+  notifications_notification: 通知
+  notifications_no_notification: 通知はありません
+  #Notification/_notification.html.erb
+  notifications_follow: あなたをフォローしました
+  notifications_yourtask: あなたのタスク
+  notifications_ja_comment: にコメントしました。
+  notifications_en_comment: ""
+  notifications_whosetask: さんのタスク
+  notifications_who: さんが
+  #Devise/Registration/profile.html.erb
+  following_title: フォローユーザー
+  follower_title: フォロワー
+  profile_whose: さんの
+  profile_account_edit: アカウント編集
+  profile_tasks_list: タスク一覧へ
+  profile_search_placeholder: ユーザー名
+  profile_search: 検索
+  profile_table_username: ユーザーネーム
+  profile_table_follow: フォロー
+  profile_table_follower: フォロワー
+  profile_backto_mypage: マイページへ戻る
+  #Devise/Registration/_stats.html.erb
+  profile_stats_follow: フォロー
+  profile_stats_follower: フォロワー
+  #Devise/Registration/_follow.html.erb
+  profile_follow_button: フォローする
+  profile_unfollow_button: フォロー中
+
+  #ActiveRecordの辞書
   activerecord:
     attributes:
       task:

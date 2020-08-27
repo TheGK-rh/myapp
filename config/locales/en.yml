@@ -30,4 +30,79 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  #Application.html.erb
+  app_mypage: MyPage
+  app_tasks: Tasks
+  app_tags: Tags
+  app_activitylog: Activity Log
+  notification: Notification
+  app_logout: LogOut
+  app_login: LogIn
+  app_createaccount: Create Account
+  #Tasks/index.html.erb
+  tasks_taskname: Task_Title
+  tasks_search: Search
+  tasks_taskcreate: Create Task
+  tasks_tagcreate: Create Tag
+  tasks_activitylog: Activity Log
+  tasks_notification: Notification
+  tasks_logout: LogOut
+  tasks_help: Help
+  tasks_help_edit: Edit
+  tasks_help_delete: Delete
+  tasks_help_changestatus: Change Status
+  tasks_onworking: OnWorking
+  tasks_completed: Completed
+  tasks_delete_message: Do you want to Delete? Are you Sure?
+  #Tasks/show.html.erb
+  tasks_description: Task Description
+  tasks_subtask: Subtask
+  tasks_tag: Tag
+  tasks_term: Term
+  tasks_file: File
+  tasks_comment: Comment
+  tasks_noshow: You can not get this Task.
+  #Tags/index.html.erb
+  tags_tags: Tags List
+  tags_other_tags: Other User's Tags
+  tags_delete_message: Do you want to Delete? Are you Sure?
+  #Tags/_form.html.erb
+  tags_form_create: Create
+  tags_form_label: Create New Tag
+  #Activity/index.html.erb
+  activities_activity: Activity Log
+  activities_no_activity: There is no Activity.
+  #Activity/_activity.html.erb
+  activities_ja_follow: ""
+  activities_ja_comment: ""
+  activities_en_follow: Following
+  activities_en_comment: Commented on
+  activities_task: s task
+  #Notification/index.html.erb
+  notifications_notification: Notification
+  notifications_no_notification: There is no Notification
+  #Notification/_notification.html.erb
+  notifications_follow: following you.
+  notifications_yourtask: Your Task
+  notifications_ja_comment: ""
+  notifications_en_comment: Commented on
+  notifications_whosetask: ""
+  notifications_who: ""
+  #Devise/Registration/profile.html.erb
+  following_title: Follow User
+  follower_title: Follower
+  profile_whose: ""
+  profile_account_edit: Edit Your Account
+  profile_tasks_list: To Tasks List
+  profile_search_placeholder: UserName
+  profile_search: Search
+  profile_table_username: User Name
+  profile_table_follow: Following
+  profile_table_follower: Follower
+  profile_backto_mypage: Back to MyPage
+  #Devise/Registration/_stats.html.erb
+  profile_stats_follow: Follow
+  profile_stats_follower: Follower
+  #Devise/Registration/_follow.html.erb
+  profile_follow_button: Follow
+  profile_unfollow_button: Followed

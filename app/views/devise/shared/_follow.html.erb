@@ -1,5 +1,5 @@
 <%= form_for(current_user.active_relationships.build, remote: true) do |f| %>
   <div><%= hidden_field_tag :following_id, @user.id %></div>
-  <%= f.submit "フォローする", class: "btn btn-primary btn-sm" %>
-  <%= link_to "マイページへ戻る", profile_path(current_user.id), class: "btn btn-primary btn-sm" %>
+  <%= f.submit (t :profile_follow_button), class: "btn btn-primary btn-sm" %>
+  <%= link_to (t :profile_backto_mypage), profile_path(current_user.id), class: "btn btn-primary btn-sm" %>
 <% end %>

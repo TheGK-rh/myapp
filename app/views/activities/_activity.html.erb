@@ -6,15 +6,17 @@
     <li class="list-group-item activity-list">
       <% case activity.action %>
         <% when 'follow' then %>
+          <%= t :activities_en_follow %>
           <%= link_to visited.name, profile_path(visited) %>
-          さんをフォローしました
+          <%= t :activities_ja_follow %>
         <% when 'comment' then %>
+          <%= t :activities_en_comment %>
           <% if activity.task.user_id == visitor.id %>
             <%= link_to activity.task.title, activity.task %>
           <% else %>
-            <%= activity.task.user.name %>さんのタスク
+            <%= activity.task.user.name %><%= t :activities_task %>
           <% end %>
-          にコメントしました
+          <%= t :activities_ja_comment %>
           <p class="text-muted mb-0">
             <%= Comment.find_by(id: activity.comment_id)&.body %>
           </p>

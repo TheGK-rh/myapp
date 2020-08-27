@@ -4,17 +4,18 @@
 <div class="card" style="width: 30rem; font-size: 16px;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item notification-list">
-      <%= link_to visitor.name, profile_path(visitor) %>さんが
+      <%= link_to visitor.name, profile_path(visitor) %><%= t :notifications_who %>
       <% case notification.action %>
         <% when 'follow' then %>
-          あなたをフォローしました
+          <%= t :notifications_follow %>
         <% when 'comment' then %>
+          <%= t :notifications_en_comment %>
           <% if notification.task.user_id == visited.id %>
-            <%= link_to "あなたのタスク", notification.task %>
+            <%= link_to (t :notifications_yourtask), notification.task %>
           <% else %>
-            <%= notification.task.user.name %>さんのタスク
+            <%= notification.task.user.name %><%= t :notifications_whosetask %>
           <% end %>
-          にコメントしました。
+          <%= t :notifications_ja_comment %>
           <p class="text-muted mb-0">
             <%= Comment.find_by(id: notification.comment_id)&.body %>
           </p>
