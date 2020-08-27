@@ -1,8 +1,8 @@
 <div>
   <%= form_for tag do |f| %>
-    <h5><%= icon('fas', 'tag', style:"color: dodgerblue") %>&nbsp;<%= f.label :name, "新しいタグを作成" %></h5>
+    <h5><%= icon('fas', 'tag', style:"color: dodgerblue") %>&nbsp;<%= f.label :name, (t :tags_form_label) %></h5>
     <%= f.text_field :name, class: "form-control" %>
     <br>
-    <%= f.submit "作成", class: "btn btn-outline-primary" %>
+    <%= f.submit (t :tags_form_create), class: "btn btn-outline-primary" %>
   <% end %>
 </div>

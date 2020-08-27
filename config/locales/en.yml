@@ -62,3 +62,10 @@ en:
   tasks_file: File
   tasks_comment: Comment
   tasks_noshow: You can not get this Task.
+  #Tags/index.html.erb
+  tags_tags: Tags List
+  tags_other_tags: Other User's Tags
+  tags_delete_message: Do you want to Delete? Are you Sure?
+  #Tags/_form.html.erb
+  tags_form_create: Create
+  tags_form_label: Create New Tag

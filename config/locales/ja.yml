@@ -31,6 +31,13 @@ ja:
   tasks_file: ファイル
   tasks_comment: コメント
   tasks_noshow: 表示できません。
+  #Tags/index.html.erb
+  tags_tags: タグ一覧
+  tags_other_tags: みんなのタグ
+  tags_delete_message: 削除します。よろしいですか。
+  #Tags/_form.html.erb
+  tags_form_create: 作成
+  tags_form_label: 新しいタグを作成
 
   #ActiveRecordの辞書
   activerecord:

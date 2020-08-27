@@ -11,14 +11,14 @@
     <div class="col-12">
       <div class="card mt-3 everytag">
         <div class="card-body">
-          <h5><%= icon('fas', 'tags', style:"color: dodgerblue;") %>&nbsp;タグ一覧</h5>
+          <h5><%= icon('fas', 'tags', style:"color: dodgerblue;") %>&nbsp;<%= t :tags_tags %></h5>
           <div class="box mt-3">
             <% @tags.each do |tag| %>
               <% if user_signed_in? %>
                 <% if tag.user_id == current_user.id %>
                   <span class="badge badge-pill badge-primary" style="font-size: 14px; font-weight: 100;" id="tag-<%= tag.id %>">
                     <%= tag.name %>
-                    <%= link_to tag_path(tag), method: :delete, remote: true, data: { confirm: "削除します。よろしいですか。" }, style: "color: white;" do %>
+                    <%= link_to tag_path(tag), method: :delete, remote: true, data: { confirm: (t :tags_delete_message) }, style: "color: white;" do %>
                       <%= icon('far', 'trash-alt') %>
                     <% end %>
                   </span>
@@ -35,7 +35,7 @@
     <div class="col-12">
       <div class="card mt-3 everytag">
         <div class="card-body">
-          <h5><%= icon('fas', 'tags', style:"color: green;") %>&nbsp;みんなのタグ</h5>
+          <h5><%= icon('fas', 'tags', style:"color: green;") %>&nbsp;<%= t :tags_other_tags %></h5>
           <div class="box mt-3 ">
             <% @tags.each do |tag| %>
               <% if user_signed_in? %>
