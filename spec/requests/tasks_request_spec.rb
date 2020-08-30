@@ -24,17 +24,17 @@ RSpec.describe "Tasks", type: :request do
     end
   end
 
-  describe 'GET users/registrations#profile' do
-    before do
-      sign_in user
-    end
-    context 'ユーザーページにアクセス' do
-      it 'リクエストが成功すること' do
-        get profile_path(user.id)
-        expect(response).to have_http_status 200
-      end
-    end
-  end
+  #describe 'GET users/registrations#profile' do
+    #before do
+      #sign_in user
+    #end
+    #context 'ユーザーページにアクセス' do
+      #it 'リクエストが成功すること' do
+        #get profile_path(user.id)
+        #expect(response).to have_http_status 200
+      #end
+    #end
+  #end
 
   describe 'GET tags#index' do
     context 'ログインしていない' do

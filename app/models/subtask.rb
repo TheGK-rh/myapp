@@ -4,7 +4,7 @@ class Subtask < ApplicationRecord
   belongs_to :user
 
   #Validation
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 100 }
 
   #完了機能
   def completed?
