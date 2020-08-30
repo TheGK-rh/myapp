@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
   end
 
   # url_for関係メソッドでロケールを設定するよう上書き
-  def default_url_options
-    { locale: I18n.locale }
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
   end
 
   private

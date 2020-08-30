@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /en|ja/ do
+  scope '(:locale)', locale: /en|ja/ do
 
     #ユーザー機能：Devise(including Follow function)
     devise_for :users, controllers:{
@@ -43,5 +43,6 @@ Rails.application.routes.draw do
     end
     #Home page
     root "tasks#index"
+
   end
 end
