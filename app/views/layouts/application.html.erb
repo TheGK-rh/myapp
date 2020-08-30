@@ -55,6 +55,18 @@
           <li class="nav-item active">
             <a class="nav-link" href="https://www.wantedly.com/users/140166658" target="_blank"><%= icon('fas', 'user-astronaut') %>&nbsp;Wantedly</a>
           </li>
+          <%# 図面管理appのプロフィールページのリンク %>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://drawingmanagement.herokuapp.com/users/sign_in" target="_blank"><%= icon('fas', 'dice-d20') %>&nbsp;図面管理app</a>
+          </li>
+          <%# JA/ENの切り替えリンク %>
+          <li class="nav-item active" style="color: white;">
+            <a>
+              <%= icon('fas', 'globe', class: "nav-link") %>
+              <%= link_to_if params[:locale].present?,'JA', url_for(controller: controller.controller_name, action: controller.action_name, locale: 'ja'), style:"color: white;"%> |
+              <%= link_to_if params[:locale] != 'en',  'EN',  url_for(controller: controller.controller_name, action: controller.action_name, locale: 'en'), style:"color: white;"%>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
