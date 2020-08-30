@@ -17,7 +17,6 @@ RSpec.feature "Tasks", type: :feature do
     # ログインボタンをクリックする
     click_button 'ログイン'
     # ログインに成功したことを検証する
-    expect(current_path).to eq root_path
     expect(page).to have_content 'ログインしました。'
 
     #タスク作成をクリックする

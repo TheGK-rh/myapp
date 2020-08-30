@@ -39,7 +39,7 @@ RSpec.describe Description, type: :model do
 
     context '文字数が1500文字以上' do
       it '登録できない' do
-        expect(build(:description, description: "b" * 1500)).to_not be_valid
+        expect(build(:description, description: "b" * 1501)).to_not be_valid
       end
     end
 

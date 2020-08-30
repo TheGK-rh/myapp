@@ -16,13 +16,12 @@ RSpec.feature "Tags", type: :feature do
     # ログインボタンをクリックする
     click_button 'ログイン'
     # ログインに成功したことを検証する
-    expect(current_path).to eq root_path
     expect(page).to have_content 'ログインしました。'
 
     #タグ作成をクリック
     click_link 'タグ作成'
     #tagsへアクセス
-    expect(current_path).to eq tags_path
+    expect(current_path).to eq "/ja/tags"
     #入力フォームに入力
     fill_in '新しいタグを作成', with: 'タグ作成テスト'
     #作成をクリック
