@@ -71,15 +71,16 @@
       </div>
     </nav>
 
-    <%# フラッシュメッセージ %>
-    <div class="mt-3">
-      <% flash.each do |key, value| %>
-        <p><%= content_tag(:div, value, class: "#{key}") %></p>
-      <% end %>
-    </div>
-
     <div class="container">
-      <%= yield %>
+      <%# フラッシュメッセージ %>
+      <div class="mt-3">
+        <% flash.each do |key, value| %>
+          <p><%= content_tag(:div, value, class: "#{key}") %></p>
+        <% end %>
+      </div>
+      <div class="mt-1">
+        <%= yield %>
+      </div>
     </div>
 
   </div>
