@@ -328,3 +328,34 @@ body{
     margin-top: 20px;
   }
 }
+
+@media screen and (max-width: 480px){
+  .user-box1{
+    background: #FFFF99;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 1px #CCCCCC;
+  }
+  .user-box2{
+    background: #FFFF99;
+    margin-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 1px #CCCCCC;
+  }
+  .user-title h2{
+    font-size: 24px;
+  }
+  .welcome-message h3{
+    font-size: 24px;
+  }
+  .welcome-img{
+    height: 200px;
+    width: 340px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .task-cont h2{
+    font-size: 20px;
+  }
+}
