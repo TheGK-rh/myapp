@@ -1,7 +1,7 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
 
-<div class="card" style="width: 30rem; font-size: 16px;">
+<div class="card" style="font-size: 16px;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item notification-list">
       <%= link_to visitor.name, profile_path(visitor) %><%= t :notifications_who %>
