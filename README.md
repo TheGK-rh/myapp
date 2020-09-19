@@ -1,6 +1,6 @@
 # Lemonfish
 
-![スクリーンショット 2020-08-18 14 54 32 1](https://user-images.githubusercontent.com/61115238/90475690-e730c880-e162-11ea-9196-d90ded70e0e4.png)
+![スクリーンショット 2020-09-08 1 49 23](https://user-images.githubusercontent.com/61115238/92407489-aaf6f380-f175-11ea-9601-53b14928b96f.png)
 Lemonfishは日常の用事はもちろんですが、仕事上のタスクを管理するToDoListサービスです。
 開発にはRuby/Ruby on Rails、インフラにはAWSを使用しています。（詳細は後述）
 
@@ -62,7 +62,7 @@ https://lemonfish.link
 
 ## 学習方法・参考サイト
   - ProgateとUdemyで基礎学習の後、それぞれの公式ガイド、QiitaやStackoverflowなどを参考に作成。
-  - Trello、Todoist
+  - 参考サイト：Trello、Todoist
 
 ## 課題
   - UI/UXのブラッシュアップ、フロント側のスキル・知識アップ
